@@ -1,0 +1,173 @@
+$black: #212121;
+$darkGrey: #333333;
+$darkGreen: #19770d;
+$green: #1ceb26;
+$darkWhite: rgb(247, 247, 247);
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;800&display=swap');
+
+// Set-ups
+body{
+  font-family: 'Open Sans', sans-serif;
+}
+
+section, footer{
+  height: 100vh;
+  padding: 0 100px;
+  overflow: hidden;
+}
+
+h2{
+  font-size: 8em;
+  font-weight: 800;
+  opacity: 0.4;
+}
+
+// Header
+header{
+  background-color: $black;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  // Nav
+  nav{
+    position: fixed;
+    z-index: 10;
+    transition: .2s;
+    color: $darkWhite;
+    width: 100%;
+    top: -1px;
+    height: 100px;
+
+    &>div{
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      position: relative;
+
+      button{
+        margin: 0 2.5em;
+        transition: .4s;
+      }
+      button:hover{
+        color: $green;
+        cursor: pointer;
+      }
+
+      .progressBar{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: $green;
+        height: 3px;
+      }
+    }
+  }
+  .offsetNav{
+    background-color: $darkGrey;
+    height: 60px;
+  }
+
+  // Hero
+  .headerMain{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding: 0 100px;
+    
+    .headerRight, .headerLeft{
+        width: 100%;
+        display: flex;
+    }
+
+    .headerLeft{
+        color: $darkWhite;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        h1{
+          text-transform: uppercase;
+          font-weight: 800;
+          font-size: 3em;
+        }
+    }
+
+    .headerRight{
+        position: relative;
+        justify-content: center;
+        align-items: center;
+
+      .headerImgWrapper{
+        position: relative;
+        width: 600px;
+        height: 350px;
+        z-index: 1;
+        overflow: hidden;
+        background-position: top center;
+        background-size: cover;
+        margin-top: 20%;
+
+        .headerImg{
+          position: absolute;
+          bottom: 0;
+          left: 25%;
+          width: 300px;
+          height: 210px;
+          z-index: 1;
+          background-image: url("/src/assets/photo.jpg");
+          background-position: bottom center;
+          background-repeat: no-repeat;
+          background-size: 600px 350px;
+        }
+
+        .headerImgParallax{
+          position: absolute;
+          background-image: url("/src/assets/photo.jpg");
+          background-size: 600px 350px;
+          background-repeat: no-repeat;
+          background-position: top 0 right 0;
+          width: 300px;
+          height: 210px;
+          top: 0;
+          right: 0;
+        }
+      }  
+    }
+  }
+}
+
+.section1{
+  background-color: $darkWhite;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  h2{
+    -webkit-text-stroke: 5px black;
+    color: $darkWhite;
+  }
+
+  p{
+    margin: 4em 8em;
+  }
+}
+
+.section2{
+  background-color: $black;
+  display: flex;
+  flex-direction: column;
+
+  &>div{
+    align-self: flex-end;
+
+    h2{
+      -webkit-text-stroke: 5px $darkWhite;
+      color: $black;
+    }
+  }
+}

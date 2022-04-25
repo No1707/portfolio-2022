@@ -1,4 +1,5 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+import ScrollParallax from 'vue3-parallax/src/components/ScrollParallax.vue';
 
-createApp(App).mount('#app')
+createApp(App).component('scroll-parallax', ScrollParallax).mount('#app')
