@@ -39,6 +39,7 @@
 
     </header>
 
+    <!-- Section A propos -->
     <section class="section1">
 
       <scroll-parallax :speed="0.3" direction="x">
@@ -53,17 +54,55 @@
 
     </section>
 
+    <!-- Section Projets -->
     <section class="section2">
 
       <scroll-parallax :speed="0.3" direction="x" :left="true">
         <h2>Projets</h2>
       </scroll-parallax>
 
+      <div>
+        <div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Section Compétences -->
+    <section class="section3">
+
+      <scroll-parallax :speed="0.3" direction="x">
+        <h2>Compétences</h2>
+      </scroll-parallax>
+
+      <div>
+        <div></div>
+        <div></div>
+      </div>
+
+    </section>
+
+    <!-- Section Contact -->
+    <section class="section4">
+
+      <scroll-parallax :speed="0.22" direction="y" :up="true">
+        <h2>Contact</h2>
+      </scroll-parallax>
+
+      <form action=""></form>
+
     </section>
   
 </template>
 
 <script>
+import revealItems from './js/reveal.js'
+
 export default {
   name: 'App',
   data() {
@@ -81,7 +120,7 @@ export default {
         document.documentElement.clientHeight-document.documentElement.clientHeight, 
         document.documentElement.scrollHeight-document.documentElement.clientHeight, 
         document.documentElement.offsetHeight-document.documentElement.clientHeight )
-      console.log(this.limit)
+    revealItems()
   },
   methods: {
     onScroll() {

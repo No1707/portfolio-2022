@@ -162,12 +162,66 @@ header{
   display: flex;
   flex-direction: column;
 
-  &>div{
+  &>div:nth-child(1){
     align-self: flex-end;
 
     h2{
       -webkit-text-stroke: 5px $darkWhite;
       color: $black;
+      margin: 50px 0;
+    }
+  }
+
+  &>div:not(:first-child){
+    width: 100%;
+    padding: 0 10em;
+    display: flex;
+    flex-direction: column;
+
+    &>div{
+      display: flex;
+      justify-content: start;
+      flex-wrap: wrap;
+      border: 1px solid white;
+
+      div{
+        width: 25%;
+        min-width: 250px;
+        height: 200px;
+        margin: 0 4%;
+      }
+    }
+  }
+} 
+
+.section3{
+
+  &>div:first-child{
+    position: relative;
+    left: -200px;
+    
+    h2{
+      -webkit-text-stroke: 5px $black;
+        color: $darkWhite;
+    }
+  }
+
+  &>div:not(:first-child){
+    display: flex;
+  }
+}
+
+.section4{
+  background-color: $black;
+
+  &>div:first-child{
+    position: relative;
+    top: -750px;
+
+    h2{
+      -webkit-text-stroke: 5px $darkWhite;
+      color: $black;
+      text-align: center;
     }
   }
 }
