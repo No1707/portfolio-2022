@@ -1,6 +1,4 @@
 <template>
-
-    <div class="reseaux">Réseaux</div>
     
     <header ref="home">
 
@@ -20,9 +18,9 @@
         <!-- Left -->
         <div class="headerLeft">
           <h1 class="revealMultiple">
-            <span class="revealMultipleItem">Bonjour, </span>
-            <span class="revealMultipleItem">Développeur <span>web</span></span>
-            <span class="revealMultipleItem"><span>Front-end</span> à votre service...</span>
+            <span class="revealMultipleItem"><span>Bonjour,</span> à votre service...</span>
+            <span class="revealMultipleItem">Développeur</span>
+            <span class="revealMultipleItem"><span v-for="letter in titleh1" :key="letter">{{ letter }}</span></span>
           </h1>
           <scroll-parallax class="reveal" direction="x" :right="true" :speed="0.15">
             <p>Création de sites web <span>modernes</span> et <span>responsives</span></p>
@@ -46,17 +44,29 @@
 
       <div class="sectionContainer">
 
-        <scroll-parallax :speed="0.3" direction="x">
+        <scroll-parallax class="parallaxTransition" :speed="0.3" direction="x">
           <h2>À propos</h2>
         </scroll-parallax>
 
-        <p class="reveal">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad porro, voluptatem expedita quisquam, facere sunt fugit maxime sed fugiat ea asperiores quidem repudiandae doloribus laborum! Beatae perferendis corrupti tempora aut.
-        Assumenda ullam laboriosam quasi corrupti ab dolore suscipit necessitatibus facilis, culpa ipsum sit ea dolorum aut ipsa similique magnam nulla cumque iusto ipsam. Culpa repudiandae modi iste ipsum perspiciatis facilis.
-        Quos quo, dolorum obcaecati dolores iste suscipit ex molestias labore iure eligendi similique nemo temporibus soluta corrupti delectus libero, quaerat, alias dolorem facilis sapiente tempore. Cumque possimus voluptates iste fugit.
-        Incidunt, nam. Dolore nostrum veniam cumque nobis quos corrupti delectus modi possimus ex quaerat tempora, quia fugit esse deserunt assumenda repellat expedita rerum maxime tenetur similique. Dolorum nam debitis numquam?
-        Provident eum dolorem, molestiae quasi, porro dignissimos nemo sit non placeat nulla labore rem? Nesciunt reprehenderit minus maxime perferendis laudantium alias, autem reiciendis dolore, porro nostrum placeat harum accusantium itaque!
-        </p>
+        <div>
+          <scroll-parallax direction="x" :speed=".07" class="parallaxTransition">
+            <p>
+              Le développement front-end est une discipline que j'adore. <br>
+              J'aime faire naître des sites et applications de zéro, en les habillant et
+              en y implentant des intégrations modernes pour ensuite les rendre 
+              disponible à tous.
+              Animations, intéractions, effets UI sont ce que je préfère intégrés. <br><br><br>
+    
+              Curieux, rigoureux, aime les défis, très attentif aux détails, vous pouvez compter
+              sur moi pour faire mon maximum dans la réalisation de votre projet. <br><br><br>
+              
+              Web 3, Cryptomonnaies, Échecs, Fan de mountain biking ( VTT de descente ), Sportif.
+    
+              Je saurais être à la hauteur de vos attentes.
+            </p>
+          </scroll-parallax>
+          <scroll-parallax direction="x" :left="true" :speed=".07" class="parallaxTransition"></scroll-parallax>
+        </div>
 
       </div>
 
@@ -67,7 +77,7 @@
 
       <div class="sectionContainer">
 
-        <scroll-parallax :speed="0.3" direction="x" :left="true">
+        <scroll-parallax class="parallaxTransition" :speed="0.3" direction="x" :left="true">
           <h2>Projets</h2>
         </scroll-parallax>
 
@@ -93,13 +103,12 @@
 
       <div class="sectionContainer">
 
-        <scroll-parallax :speed="0.3" direction="x">
+        <scroll-parallax class="parallaxTransition" :speed="0.3" direction="x">
           <h2>Compétences</h2>
         </scroll-parallax>
 
-        <div>
-          <div></div>
-          <div></div>
+        <div class="skillsContainer">
+          
         </div>
 
       </div>
@@ -107,11 +116,11 @@
     </section>
 
     <!-- Section Contact -->
-    <section class="section4" ref="contact">
+    <footer class="section4" ref="contact">
 
       <div class="sectionContainer">
 
-        <scroll-parallax :speed="0.2" direction="y" :up="true">
+        <scroll-parallax class="parallaxTransition" :speed="0.2" direction="y" :up="true">
           <h2>Contact</h2>
         </scroll-parallax>
 
@@ -139,16 +148,22 @@
 
       </div>
 
-    </section>
+    </footer>
+
+    <Reseaux/>
 
 </template>
 
 <script>
 import revealItems from './js/reveal.js'
 import revealMultipleItems from './js/revealMultiple.js'
+import Reseaux from './components/Reseaux.vue'
 
 export default {
   name: 'App',
+  components: {
+    Reseaux
+  },
   data() {
     return {
       limit: 0,
@@ -162,7 +177,9 @@ export default {
         {name: "À propos", id: "about"},
         {name: "Projets", id: "projects"},
         {name: "Compétences", id: "skills"},
-        {name: "Contact", id: "contact"}]
+        {name: "Contact", id: "contact"}],
+      zones: [],
+      titleh1: ['w','e','b',' ','f','r','o','n','t','-','e','n','d']
     }
   },
   mounted() {
@@ -172,9 +189,10 @@ export default {
         document.body.offsetHeight-document.documentElement.clientHeight, 
         document.documentElement.clientHeight-document.documentElement.clientHeight, 
         document.documentElement.scrollHeight-document.documentElement.clientHeight, 
-        document.documentElement.offsetHeight-document.documentElement.clientHeight )
+        document.documentElement.offsetHeight-document.documentElement.clientHeight)
     revealItems()  
     revealMultipleItems()
+    this.zones.push(this.$refs.home, this.$refs.projects, this.$refs.contact)
   },
   methods: {
     onScroll() {
@@ -188,7 +206,6 @@ export default {
   },
   computed: {
     submitContactForm() {
-      // return this.$refs.contactForm.submit()
       return console.log(this.contactName.length, this.contactMail.length, this.contactMessage.length)
     },
     disabledContactSubmit(){
