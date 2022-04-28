@@ -37,6 +37,14 @@ function revealItems() {
             }
         }
     })
+
+    for (const _item of revealItems) {
+
+        if (!_item.revealed && window.scrollY + window.innerHeight > _item.top + _item.height * 0.5) {
+            _item.revealed = true
+            _item.element.classList.add("revealed")
+        }
+    }
 }
 
 export default revealItems
