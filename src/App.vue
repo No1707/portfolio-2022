@@ -20,17 +20,20 @@
           <h1 class="revealMultiple">
             <span class="revealMultipleItem"><span>Bonjour,</span> à votre service...</span>
             <span class="revealMultipleItem">Développeur</span>
-            <span class="revealMultipleItem"><span v-for="letter in titleh1" :key="letter">{{ letter }}</span></span>
+            <span class="revealMultipleItem"><span v-for="letter in titleh1" :key="letter" @click="clickedLetter($event)">{{ letter }}</span></span>
           </h1>
           <scroll-parallax class="reveal" direction="x" :right="true" :speed="0.15">
             <p>Création de sites web <span>modernes</span> et <span>responsives</span></p>
           </scroll-parallax>
+          <button class="styledButton" @click="navigateMenu('contact')">
+            <span>Me contacter</span>
+          </button>
         </div>
         
         <!-- Right -->
         <div class="headerRight">
           <div class="headerImgWrapper reveal">
-            <scroll-parallax class="headerImgParallax" :speed="0.6" :style="{backgroundPosition: 'top 0 right ' + -scrollY*0.6 + 'px'}"  direction="x" :left="true" />
+            <scroll-parallax class="headerImgParallax" :speed="0.7" :style="{backgroundPosition: 'top 0 right ' + -scrollY*0.7 + 'px'}"  direction="x" :left="true" />
             <div class="headerImg"></div>
           </div>
         </div>
@@ -81,18 +84,7 @@
           <h2>Projets</h2>
         </scroll-parallax>
 
-        <div>
-          <div class="revealMultiple">
-            <div class="revealMultipleItem"></div>
-            <div class="revealMultipleItem"></div>
-            <div class="revealMultipleItem"></div>
-          </div>
-          <div class="revealMultiple">
-            <div class="revealMultipleItem"></div>
-            <div class="revealMultipleItem"></div>
-            <div class="revealMultipleItem"></div>
-          </div>
-        </div>
+        <ProjectsContainer />
 
       </div>
 
@@ -124,33 +116,13 @@
           <h2>Contact</h2>
         </scroll-parallax>
 
-        <form ref="contactForm" action="https://formspree.io/f/xeqnpkog" method="POST" class="reveal">
-          <div>
-            <div class="formField">
-              <input v-model="contactName" autocomplete="off" type="input" class="formInput" placeholder="Name" name="name" id='name' required="required" />
-              <label for="name" class="formLabel">Nom</label>
-            </div>
-            <div class="formField">
-              <input v-model="contactMail" autocomplete="off" type="email" class="formInput" placeholder="Email" name="email" id='email' required="required" />
-              <label for="email" class="formLabel">Email</label>
-            </div>
-          </div>
-          <div class="formTextarea">
-            <textarea v-model="contactMessage" autocomplete="off" name="message" id="message" minlength="30" rows="5" placeholder="Message" required="required"></textarea>
-            <label for="message" class="formLabel">Message</label>
-          </div>
-          <div class="submitField">
-            <button :disabled="disabledContactSubmit" @click="submitContactForm" class="submitButton">
-              <span>Envoyer</span>
-            </button>
-          </div>
-        </form>
+        <ContactForm />
 
       </div>
 
     </footer>
 
-    <Reseaux/>
+    <Reseaux />
 
 </template>
 
@@ -158,20 +130,21 @@
 import revealItems from './js/reveal.js'
 import revealMultipleItems from './js/revealMultiple.js'
 import Reseaux from './components/Reseaux.vue'
+import ContactForm from './components/ContactForm.vue'
+import ProjectsContainer from './components/ProjectsContainer.vue'
 
 export default {
   name: 'App',
   components: {
-    Reseaux
-  },
+    Reseaux,
+    ContactForm,
+    ProjectsContainer
+},
   data() {
     return {
       limit: 0,
       offsetY: 0,
       scrollY: 0,
-      contactName: "",
-      contactMail: "",
-      contactMessage: "",
       navButtons: 
         [{name: "Accueil", id: "home"}, 
         {name: "À propos", id: "about"},
@@ -179,7 +152,7 @@ export default {
         {name: "Compétences", id: "skills"},
         {name: "Contact", id: "contact"}],
       zones: [],
-      titleh1: ['w','e','b',' ','f','r','o','n','t','-','e','n','d']
+      titleh1: ['w','e','b',' ','f','r','o','n','t','-','e','n','d','.']
     }
   },
   mounted() {
@@ -202,14 +175,10 @@ export default {
     navigateMenu(id){
       const el = this.$refs[`${id}`]
       window.scroll({ top: el.offsetTop })
-    }
-  },
-  computed: {
-    submitContactForm() {
-      return console.log(this.contactName.length, this.contactMail.length, this.contactMessage.length)
     },
-    disabledContactSubmit(){
-      return this.contactName.length>1 && this.contactMail.length>1 && this.contactMessage.length>1 ? false : true
+    clickedLetter(e){
+      const ifClass = e.target.classList
+      ifClass.contains('clickedLetter') ? ifClass.remove('clickedLetter') : ifClass.add('clickedLetter')
     }
   }
 }
@@ -218,4 +187,5 @@ export default {
 <style lang="scss">
 @import "./styles/reset.css";
 @import "./styles/styles.scss";
+@import "./styles/button.scss";
 </style>

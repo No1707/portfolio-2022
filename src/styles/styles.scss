@@ -10,7 +10,7 @@ html{
 body{
   font-family: 'Arial', sans-serif;
 }
-section, footer{
+header, section, footer{
   overflow: hidden;
 }
 .sectionContainer{
@@ -51,9 +51,6 @@ h2{
     transform: translateY(0vh);
     opacity: 1;
 }
-
-// Réseaux 
-
 
 // Header
 header{
@@ -143,7 +140,6 @@ header{
           }
           &>span:nth-child(3){
             font-size: 6em;
-            // -webkit-text-stroke: 2px #00cfda;
             color: transparent;
             font-weight: bold;
 
@@ -155,6 +151,11 @@ header{
               color: $white;
               -webkit-text-stroke: unset;
             }
+            &>.clickedLetter{
+              color: $white;
+              -webkit-text-stroke: unset;
+              text-shadow: 0 0 40px rgba(192, 219, 255, .75), 0 0 12px rgba(65, 120, 255, .24);
+            }
           }
         }
 
@@ -163,13 +164,16 @@ header{
 
           p{
             width: 100%;
-            margin-top: 50px;
+            margin: 50px 0;
             font-size: 2em;
 
             span{
               color: $blue;
             }
           }
+        }
+        &>button{
+          width: fit-content;
         }
     }
 
@@ -252,7 +256,7 @@ header{
 
     &>div:nth-child(2){
       position: relative;
-      margin: 4em auto;
+      margin: 7em auto 0 auto;
       
       &>div:nth-child(1){
         max-width: 850px;
@@ -286,33 +290,10 @@ header{
 
     &>div:nth-child(1){
       align-self: flex-end;
-      margin-bottom: 50px;
 
       h2{
         color: white;
         opacity: .9;
-      }
-    }
-
-    &>div:nth-child(2){
-      width: 100%;
-      padding: 0 2em;
-      display: flex;
-      flex-direction: column;
-      margin: 5em auto;
-
-      &>div{
-        display: flex;
-        justify-content: space-evenly;
-        border: 1px solid white;
-
-        div{
-          width: 25%;
-          min-width: 200px;
-          min-height: 200px;
-          margin: 2%;
-          border: 1px solid $blue;
-        }
       }
     }
   }
@@ -358,132 +339,6 @@ header{
         opacity: .9;
       }
     }
-
-    // contact form
-    form{
-      width: 60%;
-      margin: 15vh auto 0 auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-
-      .formLabel {
-        position: absolute;
-        top: -5px;
-        display: block;
-        transition: 0.2s;
-        color: $white;
-      }
-
-      .formInput, textarea {
-        width: 100%;
-        border: 0;
-        border-bottom: 2px solid $white;
-        outline: 0;
-        color: $white;
-        padding: 7px 0;
-        background: transparent;
-        transition: border-color 0.2s, background-color 0.2s;
-
-        &::placeholder {
-          color: transparent;
-        }
-        &:placeholder-shown ~ .formLabel {
-          cursor: text;
-          top: 20px;
-        }
-        &:not(:placeholder-shown){
-          border-color: $blue;
-        }
-        &:not(:placeholder-shown) ~ .formLabel{
-          color: $blue
-        }
-      }
-      .formInput:focus, textarea:focus {
-          padding-bottom: 6px;
-          border-width: 3px;
-          border-color: $blue;
-          background-color: $darkGrey;
-          
-          ~ .formLabel {
-            position: absolute;
-            top: -15px;
-            display: block;
-            transition: 0.2s;
-            color: $blue;
-            font-size: 1.3rem;
-          }
-        }
-
-      // inputs
-      &>div:not(:last-child){
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-
-        .formField {
-          position: relative;
-          padding: 15px 0 0;
-          margin-top: 10px;
-          width: 40%;
-        }
-      }
-
-      // textarea
-      div.formTextarea{
-        position: relative;
-        padding: 15px 0 0;
-        margin: 50px auto 0 auto;
-        width: 70%;
-      }
-
-      // submit button
-      .submitField{
-        margin-top: 50px;
-
-        .submitButton {
-          color: #FFF;
-          transition: all 0.5s;
-          position: relative;
-          padding: 20px 70px;
-        }
-        .submitButton:not([disabled]):hover{
-          cursor: pointer;
-          color: $blue
-        }
-        .submitButton::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          z-index: 1;
-          background-color: rgba(0, 173, 181, 0.1);
-          transition: all 0.3s;
-        }
-        .submitButton:not([disabled]):hover::before {
-          opacity: 0 ;
-          transform: scale(0.5,0.5);
-        }
-        .submitButton::after {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          z-index: 1;
-          opacity: 0;
-          transition: all 0.3s;
-          border: 2px solid $blue;
-          transform: scale(1.2,1.2);
-        }
-        .submitButton:not([disabled]):hover::after {
-          opacity: 1;
-          transform: scale(1,1);
-        }
-      }
-    }
+    
   }
 }

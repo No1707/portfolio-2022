@@ -1,0 +1,50 @@
+$black: #1a1a1a;
+$darkGrey: #1a2f47;
+$blue: #00adb5;
+$white: #EEEEEE;
+
+.styledButton {
+    color: $white;
+    transition: all 0.5s;
+    position: relative;
+    padding: 20px 70px;
+    z-index: 1;
+    font-weight: bold;
+}
+.styledButton:not([disabled]):hover{
+    cursor: pointer;
+    color: $blue
+}
+.styledButton::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: $blue;
+    transition: all 0.3s;
+    z-index: -1;
+}
+.styledButton:not([disabled]):hover::before {
+    opacity: 0 ;
+    transform: scale(0.5,0.5);
+}
+.styledButton::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.3s;
+    border: 2px solid $blue;
+    transform: scale(1.2,1.2);
+}
+.styledButton:not([disabled]):hover::after {
+    opacity: 1;
+    transform: scale(1,1);
+}
