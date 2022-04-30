@@ -151,7 +151,6 @@ export default {
         {name: "Projets", id: "projects"},
         {name: "Compétences", id: "skills"},
         {name: "Contact", id: "contact"}],
-      zones: [],
       titleh1: ['w','e','b',' ','f','r','o','n','t','-','e','n','d','.']
     }
   },
@@ -165,7 +164,6 @@ export default {
         document.documentElement.offsetHeight-document.documentElement.clientHeight)
     revealItems()  
     revealMultipleItems()
-    this.zones.push(this.$refs.home, this.$refs.projects, this.$refs.contact)
   },
   methods: {
     onScroll() {

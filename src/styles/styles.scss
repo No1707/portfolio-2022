@@ -1,5 +1,5 @@
 $black: #1a1a1a;
-$darkGrey: #1a2f47;
+$darkBlue: #1a2f47;
 $blue: #00adb5;
 $white: #EEEEEE;
 
@@ -21,7 +21,6 @@ header, section, footer{
 h2{
   font-size: 6em;
   font-weight: 800;
-  opacity: 0.4;
   text-transform: uppercase;
   margin-top: .7em;
 }
@@ -96,7 +95,7 @@ header{
     }
   }
   .offsetNav{
-    background-color: $darkGrey;
+    background-color: $darkBlue;
     height: 60px;
     -webkit-box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.75);
@@ -262,7 +261,7 @@ header{
         max-width: 850px;
         padding: 100px;
         font-size: 1.2em;
-        background-color: $darkGrey;
+        background-color: $darkBlue;
         color: $white;
         position: relative;
         left: -100px;
@@ -334,7 +333,7 @@ header{
       top: -650px;
 
       h2{
-        color: white;
+        color: $white;
         text-align: center;
         opacity: .9;
       }

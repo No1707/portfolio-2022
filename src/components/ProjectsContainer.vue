@@ -1,41 +1,34 @@
 <template>
     <div class="projectsContainer">
         <div class="revealMultiple">
-            <div class="revealMultipleItem real" v-for="(project, i) in row1" :key="i">
+            <div class="revealMultipleItem real" v-for="(project, i) in row1" :key="i" :style="{backgroundImage: 'url(' + project.background + ')'}" @click="openProject(project.url)">
                 <div>
-
-                </div>
-                <div>
-                    <div v-for="tech in project" :key="tech.tech">
+                    <div v-for="item in project.icons" :key="item.tech">
                         <img 
-                            :src="require(`../assets/${tech.tech}.svg`)" 
-                            :alt="tech.tech" 
-                            @mouseover="tech.active=true" 
-                            @mouseleave="tech.active=false" 
+                            :src="require(`../assets/${item.tech}.svg`)" 
+                            :alt="item.name" 
+                            @mouseover="item.active=true" 
+                            @mouseleave="item.active=false" 
                         >
-                        <div :class="{showLabel: tech.active}">{{ tech.name }}</div>
+                        <div :class="{showLabel: item.active}">{{ item.name }}</div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="revealMultiple">
-            <div class="revealMultipleItem real" v-for="(project, i) in row2" :key="i">
+            <div class="revealMultipleItem real" v-for="(project, i) in row2" :key="i" :style="{backgroundImage: 'url(' + project.background + ')'}" @click="openProject(project.url)">
                 <div>
-                        
-                </div>
-                <div>
-                    <div v-for="tech in project" :key="tech.tech">
+                    <div v-for="item in project.icons" :key="item.tech">
                         <img 
-                            :src="require(`../assets/${tech.tech}.svg`)" 
-                            :alt="tech.tech" 
-                            @mouseover="tech.active=true" 
-                            @mouseleave="tech.active=false" 
+                            :src="require(`../assets/${item.tech}.svg`)" 
+                            :alt="item.name" 
+                            @mouseover="item.active=true" 
+                            @mouseleave="item.active=false" 
                         >
-                        <div :class="{showLabel: tech.active}">{{ tech.name }}</div>
+                        <div :class="{showLabel: item.active}">{{ item.name }}</div>
                     </div>
                 </div>
             </div>
-            <div class="revealMultipleIteam"></div>
         </div>
     </div>
 </template>
@@ -46,39 +39,72 @@ export default {
     data(){
         return {
             row1: [
-                [ 
-                    {tech: "html", active: false, name: "HTML"},
-                    {tech: "css", active: false, name: "CSS"} 
-                ], 
-                [
-                    {tech: "html", active: false, name: "HTML"},
-                    {tech: "css", active: false, name: "CSS"},
-                    {tech: "js", active: false, name: "JavaScript"},
-                    {tech: "angular", active: false, name: "Angular JS"} 
-                ],
-                [
-                    {tech: "html", active: false, name: "HTML"},
-                    {tech: "css", active: false, name: "CSS"},
-                    {tech: "js", active: false, name: "JavaScript"},
-                    {tech: "jquery", active: false, name: "jQuery"},
-                    {tech: "firebase", active: false, name: "Firebase"},
-                ]
+                { 
+                    icons: [ 
+                        {tech: "html", active: false, name: "HTML"}, 
+                        {tech: "css", active: false, name: "CSS"} 
+                    ],
+                    url: 'https://github.com/No1707/News-website-Front-end',
+                    background: require('../assets/GlobalMag.png')
+                }, 
+                {
+                    icons: [
+                        {tech: "html", active: false, name: "HTML"},
+                        {tech: "css", active: false, name: "CSS"},
+                        {tech: "js", active: false, name: "JavaScript"},
+                        {tech: "angular", active: false, name: "Angular JS"} 
+                    ],
+                    url: 'https://github.com/No1707/MacronutrientsNeeds',
+                    background: require('../assets/MacrosNut.png')
+                },
+                {
+                    icons: [
+                        {tech: "html", active: false, name: "HTML"},
+                        {tech: "css", active: false, name: "CSS"},
+                        {tech: "js", active: false, name: "JavaScript"},
+                        {tech: "jquery", active: false, name: "jQuery"},
+                        {tech: "firebase", active: false, name: "Firebase"}
+                    ],
+                    url: 'https://labthestrokes.web.app/',
+                    background: require('../assets/Strokes.png')
+                }
             ],
             row2: [
-                [
-                    {tech: "css", active: false, name: "CSS"},
-                    {tech: "wordpress", active: false, name: "Wordpress"},
-                    {tech: "js", active: false, name: "JavaScript"},
-                    {tech: "jquery", active: false, name: "jQuery"},
-                ],
-                [
-                    {tech: "vuejs", active: false, name: "Vue.js"},
-                    {tech: "tailwind", active: false, name: "TailwindCSS"},
-                    {tech: "js", active: false, name: "JavaScript"},
-                    {tech: "coingecko", active: false, name: "CoinGecko"},
-
-                ]
+                {
+                    icons: [
+                        {tech: "css", active: false, name: "CSS"},
+                        {tech: "wordpress", active: false, name: "Wordpress"},
+                        {tech: "js", active: false, name: "JavaScript"},
+                        {tech: "jquery", active: false, name: "jQuery"}
+                    ],
+                    url: 'https://www.axibio.fr/',
+                    background: require('../assets/Axibio.png')
+                },
+                {
+                    icons: [
+                        {tech: "vuejs", active: false, name: "Vue.js"},
+                        {tech: "tailwind", active: false, name: "TailwindCSS"},
+                        {tech: "js", active: false, name: "JavaScript"},
+                        {tech: "coingecko", active: false, name: "CoinGecko"}
+                    ],
+                    url: 'https://github.com/No1707/Crypto-Dashboard',
+                    background: require('../assets/CryptoDash.png')
+                },
+                {
+                    icons: [
+                        {tech: "shopify", active: false, name: "Shopify"},
+                        {tech: "liquid", active: false, name: "Liquid"},
+                        {tech: "css", active: false, name: "CSS"}
+                    ],
+                    url: 'https://kawalearn.shop/',
+                    background: require('../assets/KawalearnShop.png')
+                }
             ]
+        }
+    },
+    methods: {
+        openProject(link) {
+            window.open(link)
         }
     }
 }
@@ -95,7 +121,7 @@ $white: #EEEEEE;
       padding: 0 2em;
       display: flex;
       flex-direction: column;
-      margin: 4em auto;
+      margin: 5em auto;
 
         &>div{
             display: flex;
@@ -105,25 +131,14 @@ $white: #EEEEEE;
                 width: 28%;
                 min-width: 250px;
                 min-height: 200px;
-                margin: 4% 2%;
+                margin: 2%;
                 background-size: cover;
                 background-repeat: no-repeat;
                 background-position: center;
                 overflow: hidden;
                 position: relative;
 
-                &>div:nth-child(1){
-                    position: absolute;
-                    width: 100%;
-                    height: 50px;
-                    background-color: $darkGrey;
-                    padding: 5px 15px;
-                    top: -50px;
-                    left: 0;
-                    transition: .4s;
-                }
-
-                &>div:nth-child(2){
+                &>div{
                     position: absolute;
                     width: 100%;
                     height: 50px;
@@ -142,6 +157,7 @@ $white: #EEEEEE;
 
                         img{
                             width: 32px;
+                            height: 32px;
                             margin: 0 5px;
                             z-index: 1;
                         }
@@ -179,32 +195,9 @@ $white: #EEEEEE;
                 &:before{
                     background-color: rgba(0,0,0,.5);
                 }
-                &>div:nth-child(1){
-                    top: 0;
-                }
-                &>div:nth-child(2){
+                &>div{
                     bottom: 0;
                 }
-            }
-        }
-        &>div:nth-child(1){
-            
-            &>div:nth-of-type(1){
-                background-image: url('../assets/GlobalMag.png');
-            }
-            &>div:nth-of-type(2){
-                background-image: url('../assets/MacrosNut.png');
-            }
-            &>div:nth-of-type(3){
-                background-image: url('../assets/Strokes.png');
-            }
-        }
-        &>div:nth-child(2){
-            &>div:nth-of-type(1){
-                background-image: url('../assets/Axibio.png');
-            }
-            &>div:nth-of-type(2){
-                background-image: url('../assets/CryptoDash.png');
             }
         }
     }
