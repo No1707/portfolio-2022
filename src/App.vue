@@ -99,8 +99,31 @@
           <h2>Compétences</h2>
         </scroll-parallax>
 
-        <div class="skillsContainer">
-          
+        <div>
+          <div>
+            <scroll-parallax direction="x" :speed=".07" class="parallaxTransition">
+              <h3>Maîtrisés :</h3>
+              <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>HTML</li>
+              </ul>
+            </scroll-parallax>
+            <scroll-parallax direction="x" :speed=".07" :left="true" class="parallaxTransition"></scroll-parallax>
+          </div>
+          <div>
+            <scroll-parallax direction="x" :speed=".07" class="parallaxTransition">
+              <h3>En apprentisage ou au moins un projet l'utilisant :</h3>
+              <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>HTML</li>
+              </ul>
+            </scroll-parallax>
+            <scroll-parallax direction="x" :speed=".07" :left="true" class="parallaxTransition"></scroll-parallax>
+          </div>
         </div>
 
       </div>
@@ -127,11 +150,11 @@
 </template>
 
 <script>
-import revealItems from './js/reveal.js'
+import revealItem from './js/reveal.js'
 import revealMultipleItems from './js/revealMultiple.js'
 import Reseaux from './components/Reseaux.vue'
 import ContactForm from './components/ContactForm.vue'
-import ProjectsContainer from './components/ProjectsContainer.vue'
+import ProjectsContainer from './components/Projects.vue'
 
 export default {
   name: 'App',
@@ -155,6 +178,8 @@ export default {
     }
   },
   mounted() {
+    revealItem()  
+    revealMultipleItems()
     window.addEventListener('scroll', this.onScroll)
     this.limit = Math.max(
         document.body.scrollHeight-document.documentElement.clientHeight, 
@@ -162,8 +187,6 @@ export default {
         document.documentElement.clientHeight-document.documentElement.clientHeight, 
         document.documentElement.scrollHeight-document.documentElement.clientHeight, 
         document.documentElement.offsetHeight-document.documentElement.clientHeight)
-    revealItems()  
-    revealMultipleItems()
   },
   methods: {
     onScroll() {

@@ -85,7 +85,7 @@ export default {
                         {tech: "vuejs", active: false, name: "Vue.js"},
                         {tech: "tailwind", active: false, name: "TailwindCSS"},
                         {tech: "js", active: false, name: "JavaScript"},
-                        {tech: "coingecko", active: false, name: "CoinGecko"}
+                        {tech: "coingecko", active: false, name: "CoinGecko API"}
                     ],
                     url: 'https://github.com/No1707/Crypto-Dashboard',
                     background: require('../assets/CryptoDash.png')

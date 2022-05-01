@@ -1,4 +1,4 @@
-function revealItems() {
+function revealItem() {
     const revealElements = document.querySelectorAll(".reveal")
     const revealItems = []
 
@@ -12,6 +12,7 @@ function revealItems() {
         item.height = bounding.height
 
         revealItems.push(item)
+        console.log(item.element)
     }
 
     window.addEventListener('resize', () => {
@@ -33,6 +34,7 @@ function revealItems() {
 
             if (!_item.revealed && limit > _item.top + _item.height * 0.5) {
                 _item.revealed = true
+                
                 _item.element.classList.add("revealed")
             }
         }
@@ -47,4 +49,4 @@ function revealItems() {
     }
 }
 
-export default revealItems
+export default revealItem

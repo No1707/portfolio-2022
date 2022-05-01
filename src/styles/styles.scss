@@ -14,6 +14,8 @@ header, section, footer{
   overflow: hidden;
 }
 .sectionContainer{
+  display: flex;
+  flex-direction: column;
   margin: 0 auto;
   max-width: 1200px;
   height: 100vh;
@@ -37,7 +39,7 @@ h2{
 }
 
 .reveal.revealed{
-    transform: translateY(0vh);
+    transform: translateY(0vh) translateX(0vh);
     opacity: 1;
 }
 .revealMultipleItem{
@@ -245,8 +247,6 @@ header{
   background-color: $white;
 
   &>.sectionContainer{
-    display: flex;
-    flex-direction: column;
 
     h2{
       color: $white;
@@ -284,8 +284,6 @@ header{
   background-color: $black;
 
   &>.sectionContainer{
-    display: flex;
-    flex-direction: column;
 
     &>div:nth-child(1){
       align-self: flex-end;
@@ -305,7 +303,7 @@ header{
 
   &>.sectionContainer{
 
-    &>div:first-child{
+    &>div:nth-child(1){
       position: relative;
       left: -400px;
       
@@ -315,8 +313,42 @@ header{
       }
     }
 
-    .skillsContainer{
+    &>div:nth-child(2){
       display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+
+      &>div{
+        width: 100%;
+        position: relative;
+
+        &>div:nth-child(1){
+          background-color: $darkBlue;
+          padding: 50px;
+          max-width: 400px;
+          width: 100%;
+          color: $white;
+          position: relative;
+          z-index: 1;
+          display: flex;
+          flex-direction: column;
+
+          h3{
+            text-align: center;
+          }
+        }
+        &>div:nth-child(2){
+          position: absolute;
+          border: 2px solid $blue;
+          top: -10%;
+          left: 60%;
+          width: 100%;
+          height: 100%;
+          max-width: 400px;
+        }
+      }
     }
   }
 }
@@ -328,9 +360,9 @@ header{
 
   &>.sectionContainer{
 
-    &>div:first-child{
+    &>div:nth-child(1){
       position: relative;
-      top: -650px;
+      top: -700px;
 
       h2{
         color: $white;
