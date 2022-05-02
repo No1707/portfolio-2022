@@ -1,7 +1,9 @@
 $black: #1a1a1a;
+$lightBlack: #272727;
 $darkBlue: #1a2f47;
 $blue: #00adb5;
 $white: #EEEEEE;
+$darkWhite: #e6e4e4;
 
 // Set-ups
 html{
@@ -12,6 +14,7 @@ body{
 }
 header, section, footer{
   overflow: hidden;
+  position: relative;
 }
 .sectionContainer{
   display: flex;
@@ -25,14 +28,30 @@ h2{
   font-weight: 800;
   text-transform: uppercase;
   margin-top: .7em;
-}
-h3{
-  font-size: 2em;
-  margin-bottom: 20px;
   text-align: center;
+  z-index: 1;
 }
 .parallaxTransition{
   transition: transform 1s cubic-bezier(0, 0, 0, 1);
+}
+.sectionTitle{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-weight: 600;
+  font-size: 20vw;
+  white-space: nowrap;
+  pointer-events: none;
+  text-transform: uppercase;
+  line-height: 30vh;
+  padding: 100px 0;
+
+  div{
+    position: relative;
+  }
 }
 
 // Reveal 
@@ -251,11 +270,19 @@ header{
 .section1{
   background-color: $white;
 
+  .sectionTitle{
+    left: -300px;
+    color: $darkWhite;
+
+    div:nth-child(2){
+      left: 60vw;
+    }
+  }
+
   &>.sectionContainer{
 
     h2{
-      color: $white;
-      -webkit-text-stroke: 3px $blue;
+      color: $black;
     }
 
     &>div:nth-child(2){
@@ -264,8 +291,8 @@ header{
       
       &>div:nth-child(1){
         max-width: 850px;
-        padding: 100px;
-        font-size: 1.2em;
+        padding: 80px;
+        font-size: 1.3em;
         background-color: $darkBlue;
         color: $white;
         position: relative;
@@ -288,15 +315,19 @@ header{
 .section2{
   background-color: $black;
 
+  .sectionTitle{
+    left: 500px;
+    color: $lightBlack;
+
+    div:nth-child(2){
+      left: 50vw;
+    }
+  }
+
   &>.sectionContainer{
 
-    &>div:nth-child(1){
-      align-self: flex-end;
-
-      h2{
-        color: white;
-        opacity: .9;
-      }
+    h2{
+      color: $white;
     }
   }
 } 
@@ -306,16 +337,22 @@ header{
   background-color: $white;
   height: 100vh;
 
+  .sectionTitle{
+    color: $darkWhite;
+    left: -700px;
+
+    div:nth-child(2){
+      left: 25vw;
+    }
+    div:nth-child(3){
+      left: 60vw;
+    }
+  }
+
   &>.sectionContainer{
 
-    &>div:nth-child(1){
-      position: relative;
-      left: -400px;
-      
-      h2{
-        color: $white;
-        -webkit-text-stroke: 3px $blue;
-      }
+    h2{
+      color: $black;
     }
   }
 }
@@ -325,24 +362,24 @@ header{
   background-color: $black;
   height: 100vh;
 
+  .sectionTitle{
+    color: $lightBlack;
+    top: -1600px;
+    align-items: center;
+  }
+
   &>.sectionContainer{
     position: relative;
 
-    &>div:nth-child(1){
-      position: relative;
-      top: -700px;
-
-      h2{
-        color: $white;
-        text-align: center;
-        opacity: .9;
-      }
+    h2{
+      color: $white;
+      text-align: center;
     }
 
     .copyright{
       width: 100%;
       background-color: transparent;
-      border-top: 1px solid $blue;
+      border-top: 1px solid #eeeeee2c;
       padding: 20px;
       position: absolute;
       bottom: 0;

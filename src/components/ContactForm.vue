@@ -4,17 +4,17 @@
 
         <div>
             <div class="formField">
-                <input v-model="contactName" autocomplete="off" type="input" class="formInput" placeholder="Name" name="name" id='name' required="required" />
+                <input v-model="contactName" autocomplete="off" type="input" class="formInput" placeholder=" " name="name" id='name' required="required" />
                 <label for="name" class="formLabel">Nom</label>
             </div>
             <div class="formField">
-                <input v-model="contactMail" autocomplete="off" type="email" class="formInput" placeholder="Email" name="email" id='email' required="required" />
+                <input v-model="contactMail" autocomplete="off" type="email" class="formInput" placeholder=" " name="email" id='email' required="required" />
                 <label for="email" class="formLabel">Email</label>
             </div>
         </div>
 
         <div class="formTextarea">
-            <textarea v-model="contactMessage" autocomplete="off" name="message" id="message" minlength="30" rows="5" placeholder="Message" required="required"></textarea>
+            <textarea v-model="contactMessage" autocomplete="off" name="message" id="message" minlength="30" rows="5" placeholder=" " required="required"></textarea>
             <label for="message" class="formLabel">Message</label>
         </div>
 
@@ -94,6 +94,7 @@ export default{
           padding-bottom: 6px;
           border-width: 3px;
           border-color: $blue;
+          background-color: #1a2f47be;
           
           ~ .formLabel {
             position: absolute;

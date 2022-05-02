@@ -3,15 +3,15 @@
 
         <div>
             <h3>Maîtrisées :</h3>
-            <div>
-                <div v-for="master in mastered" :key="master.name"><img :src="require(`../assets/${master.link}`)" :alt="master.name">{{master.name}}</div>
+            <div class="revealMultiple">
+                <div class="revealMultipleItem" v-for="master in mastered" :key="master.name"><img :src="require(`../assets/${master.link}`)" :alt="master.name">{{master.name}}</div>
             </div>
         </div>
 
         <div>
-            <h3>Déjà travaillée :</h3>
-            <div>
-                <div v-for="worked in workedOn" :key="worked.name"><img :src="require(`../assets/${worked.link}`)" :alt="worked.name">{{worked.name}}</div>
+            <h3>Déjà travaillées :</h3>
+            <div class="revealMultiple">
+                <div class="revealMultipleItem" v-for="worked in workedOn" :key="worked.name"><img :src="require(`../assets/${worked.link}`)" :alt="worked.name">{{worked.name}}</div>
             </div>
         </div>
 
@@ -24,20 +24,20 @@ export default {
     data() {
         return {
             mastered: [
-                {link: "html.svg", name: "HTML"},
-                {link: "css.svg", name: "CSS"},
-                {link: "js.svg", name: "JavaScript"},
-                {link: "vuejs.svg", name: "Vue.js"},
-                {link: "jquery.svg", name: "jQuery"},
-                {link: "firebase.svg", name: "Firebase"}
+                {link: "htmlBlue.svg", name: "HTML"},
+                {link: "cssBlue.svg", name: "CSS"},
+                {link: "jsBlue.svg", name: "JavaScript"},
+                {link: "vuejsBlue.svg", name: "Vue.js"},
+                {link: "jqueryBlue.svg", name: "jQuery"},
+                {link: "firebaseBlue.svg", name: "Firebase"}
             ],
             workedOn: [
-                {link: "react.svg", name: "React"},
-                {link: "angular.svg", name: "Angular"},
-                {link: "wordpress.svg", name: "Wordpress"},
-                {link: "shopify.svg", name: "Shopify"},
-                {link: "bootstrap.svg", name: "Bootstrap"},
-                {link: "tailwind.svg", name: "TailwindCSS"},
+                {link: "reactBlue.svg", name: "React"},
+                {link: "angularBlue.svg", name: "Angular"},
+                {link: "wordpressBlue.svg", name: "Wordpress"},
+                {link: "shopifyBlue.svg", name: "Shopify"},
+                {link: "bootstrapBlue.svg", name: "Bootstrap"},
+                {link: "tailwindBlue.svg", name: "TailwindCSS"},
             ]
         }
     }
@@ -52,33 +52,40 @@ $white: #EEEEEE;
 
     .skillsContainer{
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: space-between;
+      justify-content: flex-start;
       width: 100%;
       height: 100%;
 
         &>div{
-            background-color: $darkBlue;
-            padding: 30px 50px;
-            max-width: 400px;
             width: 100%;
             color: $white;
             position: relative;
             z-index: 1;
             display: flex;
             flex-direction: column;
+            margin: 70px auto;
+
+            h3{
+                color: $black;
+                font-weight: bold;
+                font-size: 2em;
+                margin-bottom: 50px;
+                text-align: center;
+            }
 
             &>div{
-                display: grid;
-                grid-template-columns: 50% 50%;
-                text-align: start;
+                display: flex;
+                background-color: #1a2f472f;
+                color: $black;
+                overflow: hidden;
 
                 &>div{
-                    font-weight: bold;
+                    padding: 30px;
                     display: flex;
                     align-items: center;
                     width: 100%;
-                    margin: 10px auto;
 
                     img{
                         width: 40px;
