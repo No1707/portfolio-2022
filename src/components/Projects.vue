@@ -3,9 +3,9 @@
         <div class="revealMultiple">
             <div class="revealMultipleItem real" v-for="(project, i) in row1" :key="i" :style="{backgroundImage: 'url(' + project.background + ')'}" @click="openProject(project.url)">
                 <div>
-                    <div v-for="item in project.icons" :key="item.tech">
+                    <div v-for="item in project.icons" :key="item.name">
                         <img 
-                            :src="require(`../assets/${item.tech}.svg`)" 
+                            :src="require(`../assets/${item.link}`)" 
                             :alt="item.name" 
                             @mouseover="item.active=true" 
                             @mouseleave="item.active=false" 
@@ -18,9 +18,9 @@
         <div class="revealMultiple">
             <div class="revealMultipleItem real" v-for="(project, i) in row2" :key="i" :style="{backgroundImage: 'url(' + project.background + ')'}" @click="openProject(project.url)">
                 <div>
-                    <div v-for="item in project.icons" :key="item.tech">
+                    <div v-for="item in project.icons" :key="item.name">
                         <img 
-                            :src="require(`../assets/${item.tech}.svg`)" 
+                            :src="require(`../assets/${item.link}`)" 
                             :alt="item.name" 
                             @mouseover="item.active=true" 
                             @mouseleave="item.active=false" 
@@ -41,29 +41,29 @@ export default {
             row1: [
                 { 
                     icons: [ 
-                        {tech: "html", active: false, name: "HTML"}, 
-                        {tech: "css", active: false, name: "CSS"} 
+                        {link: "html.svg", active: false, name: "HTML"}, 
+                        {link: "css.svg", active: false, name: "CSS"} 
                     ],
                     url: 'https://github.com/No1707/News-website-Front-end',
                     background: require('../assets/GlobalMag.png')
                 }, 
                 {
                     icons: [
-                        {tech: "html", active: false, name: "HTML"},
-                        {tech: "css", active: false, name: "CSS"},
-                        {tech: "js", active: false, name: "JavaScript"},
-                        {tech: "angular", active: false, name: "Angular JS"} 
+                        {link: "html.svg", active: false, name: "HTML"},
+                        {link: "css.svg", active: false, name: "CSS"},
+                        {link: "js.svg", active: false, name: "JavaScript"},
+                        {link: "angular.svg", active: false, name: "Angular JS"} 
                     ],
                     url: 'https://github.com/No1707/MacronutrientsNeeds',
                     background: require('../assets/MacrosNut.png')
                 },
                 {
                     icons: [
-                        {tech: "html", active: false, name: "HTML"},
-                        {tech: "css", active: false, name: "CSS"},
-                        {tech: "js", active: false, name: "JavaScript"},
-                        {tech: "jquery", active: false, name: "jQuery"},
-                        {tech: "firebase", active: false, name: "Firebase"}
+                        {link: "html.svg", active: false, name: "HTML"},
+                        {link: "css.svg", active: false, name: "CSS"},
+                        {link: "js.svg", active: false, name: "JavaScript"},
+                        {link: "jquery.svg", active: false, name: "jQuery"},
+                        {link: "firebase.svg", active: false, name: "Firebase"}
                     ],
                     url: 'https://labthestrokes.web.app/',
                     background: require('../assets/Strokes.png')
@@ -72,29 +72,29 @@ export default {
             row2: [
                 {
                     icons: [
-                        {tech: "css", active: false, name: "CSS"},
-                        {tech: "wordpress", active: false, name: "Wordpress"},
-                        {tech: "js", active: false, name: "JavaScript"},
-                        {tech: "jquery", active: false, name: "jQuery"}
+                        {link: "css.svg", active: false, name: "CSS"},
+                        {link: "wordpress.svg", active: false, name: "Wordpress"},
+                        {link: "js.svg", active: false, name: "JavaScript"},
+                        {link: "jquery.svg", active: false, name: "jQuery"}
                     ],
                     url: 'https://www.axibio.fr/',
                     background: require('../assets/Axibio.png')
                 },
                 {
                     icons: [
-                        {tech: "vuejs", active: false, name: "Vue.js"},
-                        {tech: "tailwind", active: false, name: "TailwindCSS"},
-                        {tech: "js", active: false, name: "JavaScript"},
-                        {tech: "coingecko", active: false, name: "CoinGecko API"}
+                        {link: "vuejs.svg", active: false, name: "Vue.js"},
+                        {link: "tailwind.svg", active: false, name: "TailwindCSS"},
+                        {link: "js.svg", active: false, name: "JavaScript"},
+                        {link: "coingecko.svg", active: false, name: "CoinGecko API"}
                     ],
                     url: 'https://github.com/No1707/Crypto-Dashboard',
                     background: require('../assets/CryptoDash.png')
                 },
                 {
                     icons: [
-                        {tech: "shopify", active: false, name: "Shopify"},
-                        {tech: "liquid", active: false, name: "Liquid"},
-                        {tech: "css", active: false, name: "CSS"}
+                        {link: "shopify.svg", active: false, name: "Shopify"},
+                        {link: "liquid.svg", active: false, name: "Liquid"},
+                        {link: "css.svg", active: false, name: "CSS"}
                     ],
                     url: 'https://kawalearn.shop/',
                     background: require('../assets/KawalearnShop.png')

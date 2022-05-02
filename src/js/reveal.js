@@ -12,7 +12,6 @@ function revealItem() {
         item.height = bounding.height
 
         revealItems.push(item)
-        console.log(item.element)
     }
 
     window.addEventListener('resize', () => {

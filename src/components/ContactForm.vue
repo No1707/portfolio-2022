@@ -94,7 +94,6 @@ export default{
           padding-bottom: 6px;
           border-width: 3px;
           border-color: $blue;
-          background-color: $darkGrey;
           
           ~ .formLabel {
             position: absolute;

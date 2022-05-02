@@ -99,32 +99,7 @@
           <h2>Compétences</h2>
         </scroll-parallax>
 
-        <div>
-          <div>
-            <scroll-parallax direction="x" :speed=".07" class="parallaxTransition">
-              <h3>Maîtrisés :</h3>
-              <ul>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-                <li>HTML</li>
-              </ul>
-            </scroll-parallax>
-            <scroll-parallax direction="x" :speed=".07" :left="true" class="parallaxTransition"></scroll-parallax>
-          </div>
-          <div>
-            <scroll-parallax direction="x" :speed=".07" class="parallaxTransition">
-              <h3>En apprentisage ou au moins un projet l'utilisant :</h3>
-              <ul>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-                <li>HTML</li>
-              </ul>
-            </scroll-parallax>
-            <scroll-parallax direction="x" :speed=".07" :left="true" class="parallaxTransition"></scroll-parallax>
-          </div>
-        </div>
+        <Skills />
 
       </div>
 
@@ -141,6 +116,7 @@
 
         <ContactForm />
 
+        <div class="copyright">© 2022 Nolan BOISEL</div>
       </div>
 
     </footer>
@@ -155,13 +131,15 @@ import revealMultipleItems from './js/revealMultiple.js'
 import Reseaux from './components/Reseaux.vue'
 import ContactForm from './components/ContactForm.vue'
 import ProjectsContainer from './components/Projects.vue'
+import Skills from './components/Skills.vue'
 
 export default {
   name: 'App',
   components: {
     Reseaux,
     ContactForm,
-    ProjectsContainer
+    ProjectsContainer,
+    Skills
 },
   data() {
     return {
