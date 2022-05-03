@@ -2,39 +2,35 @@
     
     <header ref="home">
 
-      <!-- Navbar -->
-      <nav :class="{'offsetNav': offsetY > 0 }">
-        <div>
-          <div>
-            <a v-for="button in navButtons" :key="button.id" @click="navigateMenu(button.id)">{{ button.name }}</a>
-            <a>CV</a>
-          </div>
-          <div class="progressBar" :style="{width: offsetY+'%'}"></div>
-        </div>
-      </nav>
+      <Navbar :offsetY="offsetY"/>
 
       <div class="headerMain">
 
         <!-- Left -->
         <div class="headerLeft">
           <h1 class="revealMultiple">
-            <span class="revealMultipleItem"><span>Bonjour,</span> à votre service...</span>
+            <span class="revealMultipleItem">Bonjour, <span>à votre service...</span></span>
             <span class="revealMultipleItem">Développeur</span>
-            <span class="revealMultipleItem"><span v-for="letter in titleh1" :key="letter" @click="clickedLetter($event)">{{ letter }}</span></span>
+            <span class="revealMultipleItem"><span v-for="letter in titleh1" :key="letter.letter" :class="{clickedLetter: letter.active}" @click="letter.active=!letter.active">{{ letter.letter }}</span></span>
           </h1>
+
           <scroll-parallax class="reveal" direction="x" :right="true" :speed="0.15">
             <p>Création de sites web <span>modernes</span> et <span>responsives</span></p>
           </scroll-parallax>
+
           <button class="styledButton" @click="navigateMenu('contact')">
             <span>Me contacter</span>
           </button>
+
         </div>
         
         <!-- Right -->
         <div class="headerRight">
-          <div class="headerImgWrapper reveal">
-            <scroll-parallax class="headerImgParallax" :speed="0.7" :style="{backgroundPosition: 'top 0 right ' + -scrollY*0.7 + 'px'}"  direction="x" :left="true" />
-            <div class="headerImg"></div>
+          <div>
+            <scroll-parallax class="headerPhoto parallaxTransition" :speed=".1">
+              <img src="./assets/photo.jpg" alt="">
+            </scroll-parallax>
+            <scroll-parallax class="parallaxTransition" :speed=".15" :down="true"></scroll-parallax>
           </div>
         </div>
 
@@ -62,18 +58,18 @@
         <div>
           <scroll-parallax direction="x" :speed=".07" class="parallaxTransition">
             <p>
-              Le développement front-end est une discipline que j'adore. <br>
+              Le <span>développement front-end</span> est une discipline que j'adore. <br>
               J'aime faire naître des sites et applications de zéro, en les habillant et
-              en y implentant des intégrations modernes pour ensuite les rendre 
-              disponible à tous.
-              Animations, intéractions, effets UI sont ce que je préfère intégrés. <br><br><br>
+              en y implentant des <span>intégrations modernes</span> pour ensuite les rendre 
+              disponibles à tous. <br>
+              Animations, intéractions, effets UI sont les éléments que je préfère intégrés. <br><br><br>
     
               Curieux, rigoureux, aime les défis, très attentif aux détails, vous pouvez compter
-              sur moi pour faire mon maximum dans la réalisation de votre projet. <br><br><br>
+              sur moi pour faire mon <span>maximum</span> dans la réalisation de votre projet. <br><br><br>
               
-              Web 3, Cryptomonnaies, Échecs, Fan de mountain biking ( VTT de descente ), Sportif.
+              Web 3, Cryptomonnaies, Fan de mountain biking ( VTT de descente ), Sportif.
     
-              Je saurais être à la hauteur de vos attentes.
+              Je saurais être à la <span>hauteur</span> de vos attentes.
             </p>
           </scroll-parallax>
           <scroll-parallax direction="x" :left="true" :speed=".07" class="parallaxTransition"></scroll-parallax>
@@ -159,6 +155,7 @@ import Reseaux from './components/Reseaux.vue'
 import ContactForm from './components/ContactForm.vue'
 import ProjectsContainer from './components/Projects.vue'
 import Skills from './components/Skills.vue'
+import Navbar from './components/Navbar.vue'
 
 export default {
   name: 'App',
@@ -166,21 +163,30 @@ export default {
     Reseaux,
     ContactForm,
     ProjectsContainer,
-    Skills
+    Skills,
+    Navbar
 },
   data() {
     return {
-      test: false,
       limit: 0,
       offsetY: 0,
       scrollY: 0,
-      navButtons: 
-        [{name: "Accueil", id: "home"}, 
-        {name: "À propos", id: "about"},
-        {name: "Projets", id: "projects"},
-        {name: "Compétences", id: "skills"},
-        {name: "Contact", id: "contact"}],
-      titleh1: ['w','e','b',' ','f','r','o','n','t','-','e','n','d','.']
+      titleh1: [
+        {letter: 'w', active: false},
+        {letter: 'e', active: false},
+        {letter: 'b', active: false},
+        {letter: ' ', active: false},
+        {letter: 'f', active: false},
+        {letter: 'r', active: false},
+        {letter: 'o', active: false},
+        {letter: 'n', active: false},
+        {letter: 't', active: false},
+        {letter: '-', active: false},
+        {letter: 'e', active: false},
+        {letter: 'n', active: false},
+        {letter: 'd', active: false},
+        {letter: '.', active: false}
+      ]
     }
   },
   mounted() {
@@ -198,14 +204,6 @@ export default {
     onScroll() {
       this.scrollY = window.scrollY
       this.offsetY = (window.scrollY * 100)/this.limit
-    },
-    navigateMenu(id){
-      const el = this.$refs[`${id}`]
-      window.scroll({ top: el.offsetTop })
-    },
-    clickedLetter(e){
-      const ifClass = e.target.classList
-      ifClass.contains('clickedLetter') ? ifClass.remove('clickedLetter') : ifClass.add('clickedLetter')
     }
   }
 }

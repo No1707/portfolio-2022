@@ -82,7 +82,7 @@ $white: #EEEEEE;
                 overflow: hidden;
 
                 &>div{
-                    padding: 30px;
+                    padding: 25px;
                     display: flex;
                     align-items: center;
                     width: 100%;

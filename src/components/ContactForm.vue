@@ -53,7 +53,7 @@ export default{
 
     form{
       width: 60%;
-      margin: 15vh auto 0 auto;
+      margin: 0 auto;
       display: flex;
       flex-direction: column;
       align-items: center;
