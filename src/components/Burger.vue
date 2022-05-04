@@ -7,8 +7,13 @@
             <span></span>
         </div>
         <div :class="{displayMenu: burgerToggle}" class="burgerMenu">
-            <a v-for="button in navButtons" :key="button.id" @click="navigateMenuBurger(button.id)">{{ button.name }}</a>
-            <a>CV</a>
+            <div>
+                <a v-for="button in navButtons" :key="button.id" @click="$emit('navigateMenu', button.id), this.burgerToggle=false">{{ button.name }}</a>
+                <a>CV</a>
+            </div>
+            <div>
+                <Reseaux />
+            </div>
         </div>
     </div>
     
@@ -16,8 +21,12 @@
 </template>
 
 <script>
+import Reseaux from './Reseaux.vue'
 export default{
     name:'burger-menu',
+    components: {
+        Reseaux
+    },
     props: {
         navButtons: {
             type: Array,
@@ -27,13 +36,6 @@ export default{
     data(){
         return {
             burgerToggle: false
-        }
-    },
-    methods: {
-        navigateMenuBurger(id){
-            const el = this.$refs[`${id}`]
-            window.scroll({ top: el.offsetTop })
-            this.burgerToggle = false
         }
     }
 }
@@ -69,7 +71,7 @@ $darkWhite: #e6e4e4;
             position: absolute;
             height: 5px;
             width: 100%;
-            background: $white;
+            background: $blue;
             border-radius: 9px;
             opacity: 1;
             left: 0;
@@ -130,17 +132,37 @@ $darkWhite: #e6e4e4;
         bottom: 0;
         right: 0;
         left: 0;
-        padding: 3.5em;
+        padding: 4em 6em;
         display: flex;
         flex-direction: column;
-        opacity: 0;
         -webkit-transition: .25s ease-in-out;
         -moz-transition: .25s ease-in-out;
         -o-transition: .25s ease-in-out;
         transition: .25s ease-in-out;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+
+        &>div:nth-child(1){
+            display: flex;
+            flex-direction: column;
+            font-size: 1.5em;
+
+            a{
+                margin: 2vh 0;
+            }
+        }
     }
 
     .displayMenu{
         opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+    @media screen and (max-width: 690px){
+        .burgerButton{
+            top: 30px;
+            right: 30px;
+        }
     }
 </style>

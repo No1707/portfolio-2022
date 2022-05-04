@@ -179,78 +179,6 @@ header{
       }
     }
   }
-
-  @media screen and (max-width: 1200px){
-    nav{
-
-      &>div:nth-child(1){
-
-        a{
-          margin: 0 1.5em;
-        }
-      }
-    }
-    
-    .headerMain{
-
-      .headerLeft, .headerRight{
-        width: 100%;
-      }
-
-      .headerLeft{
-
-          h1{
-            font-size: 3.5em;
-            white-space: nowrap;
-            &>span:nth-child(1){
-
-              &>span{
-
-              }
-            }
-          }
-
-          &>div{
-
-            &>div{
-              
-              p{
-                font-size: 2em;
-                span{
-                  
-                }
-              }
-            }
-
-            &>button{
-              
-            }
-          }
-          
-      }
-
-      .headerRight{
-
-        &>div{
-
-          img{
-            
-          }
-
-          &>div:nth-child(2){
-            
-          }
-          &>div:nth-child(1){
-            
-          }
-        }
-      }
-    }
-  }
-
-  @media screen and (max-width: 1000px){
-    
-  }
 }
 
 // Section A propos
@@ -386,5 +314,168 @@ header{
       color: $white;
     }
     
+  }
+}
+
+@media screen and (max-width: 1200px){
+  header{
+    nav{
+
+      &>div:nth-child(1){
+
+        a{
+          margin: 0 1.5em;
+        }
+      }
+    }
+    
+    .headerMain{
+
+      .headerLeft, .headerRight{
+        width: 100%;
+      }
+
+      .headerLeft{
+
+          h1{
+            font-size: 3.5em;
+            white-space: nowrap;
+            &>span:nth-child(1){
+
+              &>span{
+
+              }
+            }
+          }
+
+          &>div{
+
+            p{
+              font-size: 1.5em;
+            }
+          }
+          &>button{
+              
+          }
+          
+      }
+
+      .headerRight{
+
+        &>div{
+
+          img{
+            
+          }
+
+          &>div:nth-child(2){
+            
+          }
+          &>div:nth-child(1){
+            
+          }
+        }
+      }
+    }
+  }
+}
+
+  @media screen and (max-width: 1000px){
+    header{
+    
+    .headerMain{
+      flex-direction: column;
+      padding: 30px 50px;
+
+      .headerLeft, .headerRight{
+
+      }
+
+      .headerLeft{
+
+          h1{
+            
+          }
+
+          &>div{
+
+            p{
+              font-size: 1.5em;
+            }
+          }
+          &>button{
+              
+          }
+          
+      }
+
+      .headerRight{
+
+        &>div{
+          margin-left: 20vw;
+          img{
+            
+          }
+
+          &>div:nth-child(2){
+            
+          }
+          &>div:nth-child(1){
+            
+          }
+        }
+      }
+    }
+  }
+    #desktopContact{
+      display: none;
+    }
+  }
+
+@media screen and (max-width: 690px){
+  header{
+    
+    .headerMain{
+      justify-content: center;
+
+      .headerLeft, .headerRight{
+        align-items: center;
+      }
+
+      .headerLeft{
+
+          h1{
+            font-size: 2.5em;
+          }
+
+          &>div{
+
+            p{
+              font-size: 0.9em;
+            }
+          }
+          &>button{
+            padding: 15px 40px;
+          }
+          
+      }
+
+      .headerRight{
+
+        &>div{
+          display: none;
+          img{
+            
+          }
+
+          &>div:nth-child(2){
+            
+          }
+          &>div:nth-child(1){
+            
+          }
+        }
+      }
+    }
   }
 }

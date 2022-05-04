@@ -51,7 +51,7 @@ function revealMultipleItems() {
         for (let i = 0; i < revealItems.length; i++){
             let delay = 0
             for (const _item of revealItems[i]) {
-                if (!_item.revealed && limit > _item.top + _item.height * 0.25) {
+                if (!_item.revealed && limit > _item.top + _item.height * 0.2) {
                     _item.revealed = true
                     _item.element.style.transitionDelay = delay+"s"
                     _item.element.classList.add("revealed")
@@ -69,7 +69,7 @@ function revealMultipleItems() {
                 _item.revealed = true
                 _item.element.style.transitionDelay = delay + "s"
                 _item.element.classList.add("revealed")
-                delay += 0.15
+                delay += 0.2
             }
         }
     }

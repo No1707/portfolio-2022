@@ -2,7 +2,7 @@
     
     <header ref="home">
 
-      <Navbar :offsetY="offsetY"/>
+      <Navbar :offsetY="offsetY" @navigateMenu="navigateMenu"/>
 
       <div class="headerMain">
 
@@ -26,7 +26,7 @@
         
         <!-- Right -->
         <div class="headerRight">
-          <div>
+          <div class="reveal">
             <scroll-parallax class="headerPhoto parallaxTransition" :speed=".1">
               <img src="./assets/photo.jpg" alt="">
             </scroll-parallax>
@@ -144,7 +144,7 @@
 
     </footer>
 
-    <Reseaux />
+    <Reseaux id="desktopContact" />
 
 </template>
 
@@ -204,6 +204,10 @@ export default {
     onScroll() {
       this.scrollY = window.scrollY
       this.offsetY = (window.scrollY * 100)/this.limit
+    },
+    navigateMenu(id){
+      const el = this.$refs[`${id}`]
+      window.scroll({ top: el.offsetTop })
     }
   }
 }

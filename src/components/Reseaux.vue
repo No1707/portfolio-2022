@@ -20,17 +20,14 @@
         margin: 1.5em;
         height: 25px;
         width: 25px;
+        background-repeat: no-repeat;
+        background-size: 100%;
 
         &:nth-of-type(1){
             background-image: url('../assets/email.svg');
-            filter: invert(44%) sepia(90%) saturate(788%) hue-rotate(144deg) brightness(93%) contrast(101%);
         }
         &:nth-of-type(2){
-            filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(292deg) brightness(108%) contrast(95%);
-            background-color: #EEEEEE;
             background-image: url('../assets/github.svg');
-            background-size: 25px;
-            border-radius: 3px;
         }
         &:nth-of-type(3){
             background-image: url('../assets/linkedin.svg');

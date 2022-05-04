@@ -1,14 +1,14 @@
 <template>
 
-      <nav :class="{'offsetNav': offsetY > 0 }">
-        <div>
+      <nav>
+        <div :class="{'offsetNav': offsetY > 0 }">
           <div>
-            <a class="desktopButton" v-for="button in navButtons" :key="button.id" @click="navigateMenu(button.id)">{{ button.name }}</a>
+            <a class="desktopButton" v-for="button in navButtons" :key="button.id" @click="$emit('navigateMenu', button.id)">{{ button.name }}</a>
             <a class="desktopButton">CV</a>
           </div>
           <div class="progressBar" :style="{width: offsetY+'%'}"></div>
         </div>
-        <Burger :navButtons="navButtons"/>
+        <Burger @navigateMenu="(id) => $emit('navigateMenu', id)" :navButtons="navButtons"/>
       </nav>
 
 </template>
@@ -36,12 +36,6 @@ export default {
                 {name: "Contact", id: "contact"}
             ],
         }
-    },
-    methods: {
-        navigateMenu(id){
-            const el = this.$refs[`${id}`]
-            window.scroll({ top: el.offsetTop })
-        }
     }
 }
 
@@ -58,14 +52,13 @@ $darkWhite: #e6e4e4;
     nav{
     position: fixed;
     z-index: 10;
-    transition: .2s;
     color: $white;
     width: 100%;
     top: -1px;
-    height: 100px;
 
     &>div:nth-child(1){
-      height: 100%;
+      height: 100px;
+      transition: .2s;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -93,7 +86,7 @@ $darkWhite: #e6e4e4;
   }
   .offsetNav{
     background-color: $darkBlue;
-    height: 60px;
+    height: 60px !important;
     -webkit-box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.75);
     box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.75);
@@ -104,7 +97,7 @@ $darkWhite: #e6e4e4;
 
             &>div:nth-child(1){
 
-                a{
+                a.desktopButton{
                 margin: 0 1.5em;
                 }
             }
