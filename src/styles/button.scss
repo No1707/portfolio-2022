@@ -48,3 +48,9 @@ $white: #EEEEEE;
     opacity: 1;
     transform: scale(1,1);
 }
+
+@media screen and (max-width: 1000px){
+    .styledButton{
+        padding: 15px 50px;
+    }
+}

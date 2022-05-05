@@ -318,6 +318,12 @@ header{
 }
 
 @media screen and (max-width: 1200px){
+  .sectionContainer{
+    justify-content: space-evenly;
+  }
+  h2{
+    font-size: 4em;
+  }
   header{
     nav{
 
@@ -378,55 +384,129 @@ header{
       }
     }
   }
+  // Section A propos
+  .section1{
+
+    .sectionTitle{
+
+      div:nth-child(2){
+        
+      }
+    }
+
+    &>.sectionContainer{
+
+      h2{
+        
+      }
+
+      &>div:nth-child(2){
+        
+        
+        &>div:nth-child(1){
+          max-width: 700px;
+          padding: 60px;
+          font-size: 1.1em;
+
+          span{
+            
+          }
+        }
+
+        &>div:nth-child(2){
+          
+        }
+      }
+    }
+  }
+
+  //Projets
+  .section2{
+
+    .sectionTitle{
+      
+
+      div:nth-child(2){
+        
+      }
+    }
+
+    &>.sectionContainer{
+
+      h2{
+        
+      }
+    }
+  } 
 }
 
   @media screen and (max-width: 1000px){
     header{
     
-    .headerMain{
-      flex-direction: column;
-      padding: 30px 50px;
+      .headerMain{
+        flex-direction: column;
+        padding: 30px 50px;
 
-      .headerLeft, .headerRight{
+        .headerLeft, .headerRight{
 
-      }
+        }
 
-      .headerLeft{
+        .headerLeft{
+          padding-left: 7vw;
+          margin: 1em 0;
 
-          h1{
+            h1{
+              
+            }
+
+            &>div{
+
+              p{
+                font-size: 1.5em;
+              }
+            }
+            &>button{
+              
+            }
             
-          }
+        }
+
+        .headerRight{
 
           &>div{
-
-            p{
-              font-size: 1.5em;
-            }
-          }
-          &>button{
+            margin-left: 25vw;
+            img{
               
-          }
-          
-      }
+            }
 
-      .headerRight{
-
-        &>div{
-          margin-left: 20vw;
-          img{
-            
-          }
-
-          &>div:nth-child(2){
-            
-          }
-          &>div:nth-child(1){
-            
+            &>div:nth-child(2){
+              
+            }
+            &>div:nth-child(1){
+              
+            }
           }
         }
       }
     }
-  }
+    .section2{
+      
+      .sectionTitle{
+        
+
+        div:nth-child(2){
+          
+        }
+      }
+
+      &>.sectionContainer{
+        height: auto;
+        
+        h2{
+          
+        }
+      }
+    } 
     #desktopContact{
       display: none;
     }
@@ -436,6 +516,7 @@ header{
   header{
     
     .headerMain{
+      padding: 30px 0;
       justify-content: center;
 
       .headerLeft, .headerRight{
@@ -446,6 +527,11 @@ header{
 
           h1{
             font-size: 2.5em;
+            white-space: normal;
+
+            span{
+              margin: .2em 0;
+            }
           }
 
           &>div{

@@ -163,6 +163,23 @@ $darkWhite: #e6e4e4;
         .burgerButton{
             top: 30px;
             right: 30px;
+            width: 36px;
+            height: 30px;
+
+            span:nth-child(2){
+                top: 12px;
+            }
+            span:nth-child(3){
+                top: 24px;
+            }
+
         }
+        .burgerButton.open{
+
+            span:nth-child(3){
+                top: 26px;
+            }
+        }
+    
     }
 </style>

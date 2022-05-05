@@ -1,14 +1,15 @@
 <template>
     <div class="projectsContainer">
         <div class="revealMultiple">
-            <div class="revealMultipleItem real" v-for="(project, i) in row1" :key="i" :style="{backgroundImage: 'url(' + project.background + ')'}" @click="openProject(project.url)">
+            <div class="revealMultipleItem real" v-for="(project, i) in row1" :key="i" :style="{backgroundImage: 'url(' + project.background + ')'}" @click="openProject(project.url, $event, i)">
                 <div>
                     <div v-for="item in project.icons" :key="item.name">
                         <img 
                             :src="require(`../assets/${item.link}`)" 
                             :alt="item.name" 
-                            @mouseover="item.active=true" 
-                            @mouseleave="item.active=false" 
+                            @mouseover="item.active=true"
+                            @mouseleave="item.active=false"
+                            ref="icon"
                         >
                         <div :class="{showLabel: item.active}">{{ item.name }}</div>
                     </div>
@@ -16,14 +17,15 @@
             </div>
         </div>
         <div class="revealMultiple">
-            <div class="revealMultipleItem real" v-for="(project, i) in row2" :key="i" :style="{backgroundImage: 'url(' + project.background + ')'}" @click="openProject(project.url)">
+            <div class="revealMultipleItem real" v-for="(project, i) in row2" :key="i" :style="{backgroundImage: 'url(' + project.background + ')'}" @click="openProject(project.url, $event, i)">
                 <div>
                     <div v-for="item in project.icons" :key="item.name">
                         <img 
                             :src="require(`../assets/${item.link}`)" 
                             :alt="item.name" 
-                            @mouseover="item.active=true" 
-                            @mouseleave="item.active=false" 
+                            @mouseover="item.active=true"
+                            @mouseleave="item.active=false"
+                            ref="icon"
                         >
                         <div :class="{showLabel: item.active}">{{ item.name }}</div>
                     </div>
@@ -103,8 +105,8 @@ export default {
         }
     },
     methods: {
-        openProject(link) {
-            window.open(link)
+        openProject(link, event) {
+            this.$refs.icon.indexOf(event.target) == -1 ? window.open(link) : null
         }
     }
 }
@@ -197,6 +199,34 @@ $white: #EEEEEE;
                 }
                 &>div{
                     bottom: 0;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 1200px){
+        .projectsContainer{
+            padding: 0 3.5em;
+        }
+    }
+    @media screen and (max-width: 1000px){
+        .projectsContainer{
+            
+            .revealMultiple{
+                flex-direction: column;
+                align-items: center;
+
+                .revealMultipleItem{
+                    width: 400px;
+                    margin: 3em auto;
+                    overflow: visible;
+
+                    &>div{
+
+                    }
+                }
+                .revealMultipleItem:hover>div{
+                    bottom: -50px;
                 }
             }
         }
