@@ -287,7 +287,7 @@ header{
 
   .sectionTitle{
     color: $lightBlack;
-    top: -1850px;
+    top: -200vh;
     align-items: center;
   }
 
@@ -437,10 +437,13 @@ header{
         
       }
     }
-  } 
+  }
 }
 
   @media screen and (max-width: 1000px){
+    .sectionTitle{
+      font-size: 12em;
+    }
     header{
     
       .headerMain{
@@ -489,6 +492,7 @@ header{
         }
       }
     }
+    // Projets
     .section2{
       
       .sectionTitle{
@@ -506,13 +510,63 @@ header{
           
         }
       }
-    } 
+    }
+
+    // Compétences
+    .section3{
+      
+
+      .sectionTitle{
+        left: -800px;
+
+        div:nth-child(1){
+          left: -20vw;
+        }
+        div:nth-child(2){
+          left: 5vw;
+        }
+        div:nth-child(3){
+          left: 35vw;
+        }
+      }
+
+      &>.sectionContainer{
+
+        h2{
+          margin-top: 2.1em;
+        }
+      }
+    }
+
+    // Contact
+    .section4{
+      
+
+      .sectionTitle{
+        top: -270vh;
+      }
+
+      &>.sectionContainer{
+        
+
+        h2{
+          margin-top: 1.1em;
+        }
+        
+      }
+    }
     #desktopContact{
       display: none;
     }
   }
 
 @media screen and (max-width: 690px){
+  h2{
+    font-size: 3em;
+  }
+  .sectionTitle{
+    line-height: 30vh;
+  }
   header{
     
     .headerMain{
@@ -524,7 +578,7 @@ header{
       }
 
       .headerLeft{
-
+        padding-left: 0;
           h1{
             font-size: 2.5em;
             white-space: normal;
@@ -538,6 +592,7 @@ header{
 
             p{
               font-size: 0.9em;
+              text-align: center;
             }
           }
           &>button{
@@ -562,6 +617,100 @@ header{
           }
         }
       }
+    }
+  }
+  // Section A propos
+  .section1{
+
+    .sectionTitle{
+
+      div:nth-child(2){
+        
+      }
+    }
+
+    &>.sectionContainer{
+      justify-content: space-around;
+      h2{
+        
+      }
+
+      &>div:nth-child(2){
+        
+        
+        &>div:nth-child(1){
+          max-width: 400px;
+          padding: 35px;
+          font-size: .9em;
+
+          span{
+            
+          }
+        }
+
+        &>div:nth-child(2){
+          
+        }
+      }
+    }
+  }
+
+  //Projets
+  .section2{
+
+    .sectionTitle{
+      
+
+      div:nth-child(2){
+        
+      }
+    }
+
+    &>.sectionContainer{
+      h2{
+        margin-top: 1.2em;
+      }
+
+      .projectsContainer{
+        padding: 0;
+        margin: 2em auto 3em auto;
+
+        .revealMultipleItem{
+          width: 300px;
+          min-height: 150px;
+        }
+      }
+    }
+  }
+
+
+  // Compétences
+  .section3{
+
+    &>.sectionContainer{
+
+      h2{
+        margin-top: 1.5em;
+      }
+    }
+  }
+
+  // Contact
+  .section4{
+    
+
+    .sectionTitle{
+      font-size: 10em;
+      top: -250vh;
+    }
+
+    &>.sectionContainer{
+      
+
+      h2{
+        margin-top: 1.1em;
+      }
+      
     }
   }
 }

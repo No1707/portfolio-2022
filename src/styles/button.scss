@@ -54,3 +54,8 @@ $white: #EEEEEE;
         padding: 15px 50px;
     }
 }
+@media screen and (max-width: 690px){
+    .styledButton{
+        font-size: .8em;
+    }
+}

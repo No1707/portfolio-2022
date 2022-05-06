@@ -180,6 +180,12 @@ $darkWhite: #e6e4e4;
                 top: 26px;
             }
         }
-    
+        .burgerMenu{
+            &>div:nth-child(1){
+                a{
+                    font-size: .8em;
+                }
+            }
+        }
     }
 </style>

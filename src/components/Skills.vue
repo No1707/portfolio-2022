@@ -96,4 +96,76 @@ $white: #EEEEEE;
             }
         }
     }
+
+    @media screen and (max-width: 1200px){
+        .skillsContainer{
+
+            &>div{
+                margin: 50px auto;
+
+                &>div{
+                    background-color: transparent;
+                    flex-wrap: wrap;
+                    overflow: visible;
+                    justify-content: center;
+
+                    &>div{
+                        width: 30%;
+                        justify-content: center;
+                        padding: 15px;
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 1000px){
+        .skillsContainer{
+            
+            &>div{
+                    margin: 30px auto;
+
+                h3{
+                    margin-bottom: 30px;
+                }
+
+                &>div{
+                    
+                    &>div{
+
+                        img{
+                            width: 35px;
+                            height: 35px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 690px){
+        .skillsContainer{
+            
+            &>div{
+                    margin: 30px auto;
+
+                h3{
+                    margin-bottom: 30px;
+                }
+
+                &>div{
+                    margin-left: 5vw;
+                    justify-content: space-around;
+                    
+                    &>div{
+                        width: 40%;
+                        justify-content: flex-start;
+
+                        img{
+                            width: 30px;
+                            height: 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
 </style>

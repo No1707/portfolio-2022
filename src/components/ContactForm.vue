@@ -133,5 +133,35 @@ export default{
         margin-top: 50px;
       }
     }
+    
+    @media screen and (max-width: 690px){
+      form{
+        div:nth-child(1){
+          flex-direction: column;
+
+          &>div.formField{
+            width: 100%;
+            margin-top: 30px;
+          }
+        }
+        div:nth-child(2){
+          width: 100%;
+          margin-top: 30px;
+        }
+        .formInput, textarea{
+          
+          ~ .formLabel {
+            font-size: .8em;
+          }
+        }
+        .formInput:focus, textarea:focus {
+          
+          ~ .formLabel {
+            font-size: 1em;
+            top: -10px;
+          }
+        }
+      }
+    }
 
 </style>
