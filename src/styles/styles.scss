@@ -343,42 +343,15 @@ header{
 
       .headerLeft{
 
-          h1{
-            font-size: 3.5em;
-            white-space: nowrap;
-            &>span:nth-child(1){
-
-              &>span{
-
-              }
-            }
-          }
-
-          &>div{
-
-            p{
-              font-size: 1.5em;
-            }
-          }
-          &>button{
-              
-          }
-          
-      }
-
-      .headerRight{
+        h1{
+          font-size: 3.5em;
+          white-space: nowrap;
+        }
 
         &>div{
 
-          img{
-            
-          }
-
-          &>div:nth-child(2){
-            
-          }
-          &>div:nth-child(1){
-            
+          p{
+            font-size: 1.5em;
           }
         }
       }
@@ -387,54 +360,15 @@ header{
   // Section A propos
   .section1{
 
-    .sectionTitle{
-
-      div:nth-child(2){
-        
-      }
-    }
-
     &>.sectionContainer{
 
-      h2{
-        
-      }
-
       &>div:nth-child(2){
-        
         
         &>div:nth-child(1){
           max-width: 700px;
           padding: 60px;
           font-size: 1.1em;
-
-          span{
-            
-          }
         }
-
-        &>div:nth-child(2){
-          
-        }
-      }
-    }
-  }
-
-  //Projets
-  .section2{
-
-    .sectionTitle{
-      
-
-      div:nth-child(2){
-        
-      }
-    }
-
-    &>.sectionContainer{
-
-      h2{
-        
       }
     }
   }
@@ -450,17 +384,9 @@ header{
         flex-direction: column;
         padding: 30px 50px;
 
-        .headerLeft, .headerRight{
-
-        }
-
         .headerLeft{
           padding-left: 7vw;
           margin: 1em 0;
-
-            h1{
-              
-            }
 
             &>div{
 
@@ -468,47 +394,21 @@ header{
                 font-size: 1.5em;
               }
             }
-            &>button{
-              
-            }
-            
         }
 
         .headerRight{
 
           &>div{
             margin-left: 25vw;
-            img{
-              
-            }
-
-            &>div:nth-child(2){
-              
-            }
-            &>div:nth-child(1){
-              
-            }
           }
         }
       }
     }
     // Projets
     .section2{
-      
-      .sectionTitle{
-        
-
-        div:nth-child(2){
-          
-        }
-      }
 
       &>.sectionContainer{
         height: auto;
-        
-        h2{
-          
-        }
       }
     }
 
@@ -605,16 +505,6 @@ header{
 
         &>div{
           display: none;
-          img{
-            
-          }
-
-          &>div:nth-child(2){
-            
-          }
-          &>div:nth-child(1){
-            
-          }
         }
       }
     }
@@ -622,34 +512,15 @@ header{
   // Section A propos
   .section1{
 
-    .sectionTitle{
-
-      div:nth-child(2){
-        
-      }
-    }
-
     &>.sectionContainer{
       justify-content: space-around;
-      h2{
-        
-      }
 
       &>div:nth-child(2){
-        
         
         &>div:nth-child(1){
           max-width: 400px;
           padding: 35px;
           font-size: .9em;
-
-          span{
-            
-          }
-        }
-
-        &>div:nth-child(2){
-          
         }
       }
     }
@@ -657,14 +528,6 @@ header{
 
   //Projets
   .section2{
-
-    .sectionTitle{
-      
-
-      div:nth-child(2){
-        
-      }
-    }
 
     &>.sectionContainer{
       h2{

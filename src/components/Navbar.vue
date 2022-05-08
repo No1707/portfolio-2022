@@ -4,7 +4,7 @@
         <div :class="{'offsetNav': offsetY > 0 }">
           <div>
             <a class="desktopButton" v-for="button in navButtons" :key="button.id" @click="$emit('navigateMenu', button.id)">{{ button.name }}</a>
-            <a class="desktopButton">CV</a>
+            <a target="blank" class="desktopButton" :href="`${publicPath}CV_Nolan_boisel.pdf`">CV</a>
           </div>
           <div class="progressBar" :style="{width: offsetY+'%'}"></div>
         </div>
@@ -35,6 +35,7 @@ export default {
                 {name: "Compétences", id: "skills"},
                 {name: "Contact", id: "contact"}
             ],
+            publicPath: process.env.BASE_URL
         }
     }
 }

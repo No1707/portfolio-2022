@@ -9,7 +9,7 @@
         <div :class="{displayMenu: burgerToggle}" class="burgerMenu">
             <div>
                 <a v-for="button in navButtons" :key="button.id" @click="$emit('navigateMenu', button.id), this.burgerToggle=false">{{ button.name }}</a>
-                <a>CV</a>
+                <a :href="`${publicPath}CV_Nolan_boisel.pdf`" target="blank">CV</a>
             </div>
             <div>
                 <Reseaux />
@@ -35,7 +35,8 @@ export default{
     },
     data(){
         return {
-            burgerToggle: false
+            burgerToggle: false,
+            publicPath: process.env.BASE_URL
         }
     }
 }
