@@ -317,6 +317,7 @@ header{
   }
 }
 
+// - 1200 pixels
 @media screen and (max-width: 1200px){
   .sectionContainer{
     justify-content: space-evenly;
@@ -374,6 +375,7 @@ header{
   }
 }
 
+// - 1000 pixels
   @media screen and (max-width: 1000px){
     .sectionTitle{
       font-size: 12em;
@@ -400,6 +402,19 @@ header{
 
           &>div{
             margin-left: 25vw;
+          }
+        }
+      }
+    }
+    // Section A propos
+    .section1{
+
+      &>.sectionContainer{
+
+        &>div:nth-child(2){
+          
+          &>div:nth-child(1){
+            left: 0;
           }
         }
       }
@@ -460,6 +475,7 @@ header{
     }
   }
 
+  // - 690 pixels
 @media screen and (max-width: 690px){
   h2{
     font-size: 3em;
@@ -509,7 +525,7 @@ header{
       }
     }
   }
-  // Section A propos
+  // A propos
   .section1{
 
     &>.sectionContainer{
@@ -563,8 +579,8 @@ header{
     
 
     .sectionTitle{
-      font-size: 10em;
-      top: -250vh;
+      font-size: 6em;
+      top: -252vh;
     }
 
     &>.sectionContainer{
@@ -573,7 +589,6 @@ header{
       h2{
         margin-top: 1.1em;
       }
-      
     }
   }
 }

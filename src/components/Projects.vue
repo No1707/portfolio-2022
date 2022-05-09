@@ -225,8 +225,14 @@ $white: #EEEEEE;
 
                     }
                 }
-                .revealMultipleItem:hover>div{
-                    bottom: -50px;
+                &>div.real:hover{
+
+                    &:before{
+                        background: transparent;
+                    }
+                    &>div{
+                        bottom: -50px;
+                    }
                 }
             }
         }

@@ -14,7 +14,7 @@
             <span class="revealMultipleItem"><span v-for="letter in titleh1" :key="letter.letter" :class="{clickedLetter: letter.active}" @click="letter.active=!letter.active">{{ letter.letter }}</span></span>
           </h1>
 
-          <scroll-parallax class="reveal" direction="x" :right="true" :speed="0.15">
+          <scroll-parallax class="reveal" direction="x" :right="true" :speed="0.15" :responsive="false">
             <p>Création de sites web <span>modernes</span> et <span>responsives</span></p>
           </scroll-parallax>
 
@@ -56,7 +56,7 @@
         
 
         <div>
-          <scroll-parallax direction="x" :speed=".07" class="parallaxTransition">
+          <scroll-parallax direction="x" :speed=".07" class="parallaxTransition" :responsive="false">
             <p>
               Le <span>développement front-end</span> est une discipline que j'adore. <br>
               J'aime faire naître des sites et applications de zéro, en les habillant et

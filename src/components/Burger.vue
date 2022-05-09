@@ -9,7 +9,7 @@
         <div :class="{displayMenu: burgerToggle}" class="burgerMenu">
             <div>
                 <a v-for="button in navButtons" :key="button.id" @click="$emit('navigateMenu', button.id), this.burgerToggle=false">{{ button.name }}</a>
-                <a :href="`${publicPath}CV_Nolan_boisel.pdf`" target="blank">CV</a>
+                <a :href="`${publicPath}CV_Nolan_Boisel.pdf`" target="blank">CV</a>
             </div>
             <div>
                 <Reseaux />

@@ -4,7 +4,7 @@
         <div :class="{'offsetNav': offsetY > 0 }">
           <div>
             <a class="desktopButton" v-for="button in navButtons" :key="button.id" @click="$emit('navigateMenu', button.id)">{{ button.name }}</a>
-            <a target="blank" class="desktopButton" :href="`${publicPath}CV_Nolan_boisel.pdf`">CV</a>
+            <a target="blank" class="desktopButton" :href="`${publicPath}CV_Nolan_Boisel.pdf`">CV</a>
           </div>
           <div class="progressBar" :style="{width: offsetY+'%'}"></div>
         </div>
@@ -107,7 +107,8 @@ $darkWhite: #e6e4e4;
 
   @media screen and (max-width: 1000px){
     nav{
-
+      position: relative;
+      
       &>div:nth-child(1){
         display: none;
       }
