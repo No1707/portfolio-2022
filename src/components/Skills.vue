@@ -65,13 +65,13 @@ $white: #EEEEEE;
             z-index: 1;
             display: flex;
             flex-direction: column;
-            margin: 70px auto;
+            margin: 4em auto;
 
             h3{
                 color: $black;
                 font-weight: bold;
                 font-size: 2em;
-                margin-bottom: 50px;
+                margin-bottom: 1em;
                 text-align: center;
             }
 
@@ -97,11 +97,18 @@ $white: #EEEEEE;
         }
     }
 
+    @media screen and (max-width: 1500px){
+        .skillsContainer{
+            &>div{
+                margin: 3em auto;
+            }
+        }
+    }
+
     @media screen and (max-width: 1200px){
         .skillsContainer{
 
             &>div{
-                margin: 50px auto;
 
                 &>div{
                     background-color: transparent;

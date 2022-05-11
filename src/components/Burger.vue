@@ -143,6 +143,7 @@ $darkWhite: #e6e4e4;
         opacity: 0;
         visibility: hidden;
         pointer-events: none;
+        touch-action: none;
 
         &>div:nth-child(1){
             display: flex;

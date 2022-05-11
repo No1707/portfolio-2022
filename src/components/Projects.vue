@@ -123,7 +123,7 @@ $white: #EEEEEE;
       padding: 0 2em;
       display: flex;
       flex-direction: column;
-      margin: 5em auto;
+      margin: 3em auto;
 
         &>div{
             display: flex;

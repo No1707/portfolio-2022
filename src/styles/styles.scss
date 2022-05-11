@@ -25,7 +25,7 @@ header, section, footer{
   height: 100vh;
 }
 h2{
-  font-size: 6em;
+  font-size: 5em;
   font-weight: 800;
   text-transform: uppercase;
   text-align: center;
@@ -207,7 +207,7 @@ header{
       &>div:nth-child(1){
         max-width: 850px;
         padding: 80px;
-        font-size: 1.3em;
+        font-size: 1.2em;
         background-color: $darkBlue;
         color: $white;
         position: relative;
@@ -317,13 +317,62 @@ header{
   }
 }
 
+// - 1500 pixels 
+@media screen and (max-width: 1500px){
+  h2{
+    font-size: 4em;
+  }
+  header{
+
+    nav{
+
+      &>div:nth-child(1){
+
+        a{
+          margin: 0 1.5em;
+        }
+      }
+    }
+    
+    .headerMain{
+
+      .headerLeft{
+
+        h1{
+          font-size: 4.5em;
+          white-space: nowrap;
+        }
+
+        &>div{
+
+          p{
+            font-size: 1.5em;
+          }
+        }
+      }
+    }
+  }
+  // Section A propos
+  .section1{
+
+    &>.sectionContainer{
+
+      &>div:nth-child(2){
+        
+        &>div:nth-child(1){
+          max-width: 700px;
+          padding: 50px;
+          font-size: 1.1em;
+        }
+      }
+    }
+  }
+}
+
 // - 1200 pixels
 @media screen and (max-width: 1200px){
   .sectionContainer{
     justify-content: space-evenly;
-  }
-  h2{
-    font-size: 4em;
   }
   header{
     nav{
@@ -346,29 +395,6 @@ header{
 
         h1{
           font-size: 3.5em;
-          white-space: nowrap;
-        }
-
-        &>div{
-
-          p{
-            font-size: 1.5em;
-          }
-        }
-      }
-    }
-  }
-  // Section A propos
-  .section1{
-
-    &>.sectionContainer{
-
-      &>div:nth-child(2){
-        
-        &>div:nth-child(1){
-          max-width: 700px;
-          padding: 60px;
-          font-size: 1.1em;
         }
       }
     }
@@ -591,4 +617,10 @@ header{
       }
     }
   }
+}
+
+@media screen and (max-width: 690px) and (orientation: landscape) {
+  
+
+
 }
