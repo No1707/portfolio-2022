@@ -120,10 +120,10 @@ $white: #EEEEEE;
 
     .projectsContainer{
       width: 100%;
-      padding: 0 2em;
       display: flex;
       flex-direction: column;
-      margin: 3em auto;
+      margin: 0 auto;
+      padding: 0 50px;
 
         &>div{
             display: flex;
@@ -131,7 +131,6 @@ $white: #EEEEEE;
 
             &>div{
                 width: 28%;
-                min-width: 250px;
                 min-height: 200px;
                 margin: 2%;
                 background-size: cover;
@@ -206,12 +205,19 @@ $white: #EEEEEE;
 
     @media screen and (max-width: 1200px){
         .projectsContainer{
-            padding: 0 3.5em;
+            
+            &>div{
+
+                &>div{
+                    min-height: 170px;
+                }
+            }
         }
     }
     @media screen and (max-width: 1000px){
         .projectsContainer{
-            
+            margin: 5% auto;
+
             .revealMultiple{
                 flex-direction: column;
                 align-items: center;
@@ -222,7 +228,21 @@ $white: #EEEEEE;
                     overflow: visible;
 
                     &>div{
+                        bottom: -35px;
+                        height: 35px;
+                        padding: 3px 12px;
+                        
+                        &>div{
 
+                            img{
+                                width: 22px;
+                                height: 22px;
+                            }
+
+                            .showLabel{
+                                top: -27px;
+                            }
+                        }
                     }
                 }
                 &>div.real:hover{
@@ -231,7 +251,7 @@ $white: #EEEEEE;
                         background: transparent;
                     }
                     &>div{
-                        bottom: -50px;
+                        bottom: -35px;
                     }
                 }
             }

@@ -56,7 +56,6 @@ $white: #EEEEEE;
       align-items: center;
       justify-content: flex-start;
       width: 100%;
-      height: 100%;
 
         &>div{
             width: 100%;
@@ -65,7 +64,7 @@ $white: #EEEEEE;
             z-index: 1;
             display: flex;
             flex-direction: column;
-            margin: 4em auto;
+            margin: 2.5em auto;
 
             h3{
                 color: $black;
@@ -100,7 +99,7 @@ $white: #EEEEEE;
     @media screen and (max-width: 1500px){
         .skillsContainer{
             &>div{
-                margin: 3em auto;
+                margin: 2em auto;
             }
         }
     }
@@ -132,7 +131,7 @@ $white: #EEEEEE;
                     margin: 30px auto;
 
                 h3{
-                    margin-bottom: 30px;
+                    margin-bottom: 25px;
                 }
 
                 &>div{
@@ -152,11 +151,6 @@ $white: #EEEEEE;
         .skillsContainer{
             
             &>div{
-                    margin: 30px auto;
-
-                h3{
-                    margin-bottom: 30px;
-                }
 
                 &>div{
                     margin-left: 5vw;

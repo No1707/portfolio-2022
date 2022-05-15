@@ -42,18 +42,19 @@
     <section class="section1" ref="about">
 
       <div class="sectionTitle">
-        <scroll-parallax class="parallaxTransition" :speed="0.25" direction="x">
+        <scroll-parallax class="parallaxTransition" :speed="0.15" direction="x">
           À pro
         </scroll-parallax>
-        <scroll-parallax class="parallaxTransition" :speed="0.25" direction="x">
+        <scroll-parallax class="parallaxTransition" :speed="0.15" direction="x">
           pos
         </scroll-parallax>
       </div>
 
       <div class="sectionContainer">
         
-        <h2>À propos</h2>
-        
+        <div>
+          <h2>À propos</h2>
+        </div>
 
         <div>
           <scroll-parallax direction="x" :speed=".07" class="parallaxTransition" :responsive="false">
@@ -83,17 +84,19 @@
     <section class="section2" ref="projects">
 
       <div class="sectionTitle">
-        <scroll-parallax class="parallaxTransition" :speed="0.25" direction="x" :left="true">
+        <scroll-parallax class="parallaxTransition" :speed="0.15" direction="x" :left="true">
           Pro
         </scroll-parallax>
-        <scroll-parallax class="parallaxTransition" :speed="0.25" direction="x" :left="true">
+        <scroll-parallax class="parallaxTransition" :speed="0.15" direction="x" :left="true">
           jets
         </scroll-parallax>
       </div>
 
       <div class="sectionContainer">
 
-        <h2>Projets</h2>
+        <div>
+          <h2>Projets</h2>
+        </div>
 
         <ProjectsContainer />
 
@@ -105,20 +108,22 @@
     <section class="section3" ref="skills">
 
       <div class="sectionTitle">
-        <scroll-parallax class="parallaxTransition" :speed="0.25" direction="x">
+        <scroll-parallax class="parallaxTransition" :speed="0.15" direction="x">
           Comp
         </scroll-parallax>
-        <scroll-parallax class="parallaxTransition" :speed="0.25" direction="x">
+        <scroll-parallax class="parallaxTransition" :speed="0.15" direction="x">
           éten
         </scroll-parallax>
-        <scroll-parallax class="parallaxTransition" :speed="0.25" direction="x">
+        <scroll-parallax class="parallaxTransition" :speed="0.15" direction="x">
           ces
         </scroll-parallax>
       </div>
 
       <div class="sectionContainer">
 
-        <h2>Compétences</h2>
+        <div>
+          <h2>Compétences</h2>
+        </div>
         
         <Skills />
 
@@ -135,7 +140,9 @@
 
       <div class="sectionContainer">
 
-        <h2>Contact</h2>
+        <div>
+          <h2>Contact</h2>
+        </div>
 
         <ContactForm />
 

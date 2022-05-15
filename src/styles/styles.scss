@@ -19,10 +19,15 @@ header, section, footer{
 .sectionContainer{
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   margin: 0 auto;
   max-width: 1200px;
   height: 100vh;
+
+  &>div:nth-child(1){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 h2{
   font-size: 5em;
@@ -186,7 +191,7 @@ header{
   background-color: $white;
 
   .sectionTitle{
-    left: -200px;
+    left: -150px;
     color: $darkWhite;
 
     div:nth-child(2){
@@ -196,8 +201,12 @@ header{
 
   &>.sectionContainer{
 
-    h2{
-      color: $black;
+    &>div:nth-child(1){
+      height: 30%;
+
+      h2{
+        color: $black;
+      }
     }
 
     &>div:nth-child(2){
@@ -237,7 +246,7 @@ header{
   background-color: $black;
 
   .sectionTitle{
-    left: 500px;
+    left: 300px;
     color: $lightBlack;
 
     div:nth-child(2){
@@ -247,9 +256,12 @@ header{
 
   &>.sectionContainer{
 
-    h2{
-      color: $white;
-      margin-top: .7em;
+    &>div:nth-child(1){
+      height: 30%;
+
+      h2{
+        color: $white;
+      }
     }
   }
 } 
@@ -261,7 +273,7 @@ header{
 
   .sectionTitle{
     color: $darkWhite;
-    left: -700px;
+    left: -350px;
 
     div:nth-child(2){
       left: 25vw;
@@ -273,11 +285,14 @@ header{
 
   &>.sectionContainer{
 
-    h2{
-      color: $black;
-      margin-top: .8em;
+    &>div:nth-child(1){
+      height: 30%;
+
+        h2{
+          color: $black;
+        }
+      }
     }
-  }
 }
 
 // Section Contact
@@ -293,12 +308,14 @@ header{
 
   &>.sectionContainer{
     position: relative;
-    justify-content: space-between;
 
-    h2{
-      color: $white;
-      text-align: center;
-      margin-top: .8em;
+    div:nth-child(1){
+      height: 30%;
+      
+      h2{
+        color: $white;
+        text-align: center;
+      }
     }
 
     .copyright{
@@ -306,14 +323,13 @@ header{
       background-color: transparent;
       border-top: 1px solid #eeeeee2c;
       padding: 20px;
-      position: relative;
+      position: absolute;
       bottom: 0;
       display: flex;
       align-items: center;
       justify-content: center;
       color: $white;
     }
-    
   }
 }
 
@@ -371,9 +387,6 @@ header{
 
 // - 1200 pixels
 @media screen and (max-width: 1200px){
-  .sectionContainer{
-    justify-content: space-evenly;
-  }
   header{
     nav{
 
@@ -410,6 +423,7 @@ header{
     
       .headerMain{
         flex-direction: column;
+        justify-content: space-evenly;
         padding: 30px 50px;
 
         .headerLeft{
@@ -440,6 +454,7 @@ header{
         &>div:nth-child(2){
           
           &>div:nth-child(1){
+            max-width: 550px;
             left: 0;
           }
         }
@@ -450,6 +465,11 @@ header{
 
       &>.sectionContainer{
         height: auto;
+
+        &>div:nth-child(1){
+          height: auto;
+          margin-top: 5%;
+        }
       }
     }
 
@@ -458,7 +478,7 @@ header{
       
 
       .sectionTitle{
-        left: -800px;
+        left: -450px;
 
         div:nth-child(1){
           left: -20vw;
@@ -470,30 +490,13 @@ header{
           left: 35vw;
         }
       }
-
-      &>.sectionContainer{
-
-        h2{
-          margin-top: 2.1em;
-        }
-      }
     }
 
     // Contact
     .section4{
-      
 
       .sectionTitle{
-        top: -270vh;
-      }
-
-      &>.sectionContainer{
-        
-
-        h2{
-          margin-top: 1.1em;
-        }
-        
+        top: -235vh;
       }
     }
     #desktopContact{
@@ -555,9 +558,13 @@ header{
   .section1{
 
     &>.sectionContainer{
-      justify-content: space-around;
+
+      &>div:nth-child(1){
+        height: 20%;
+      }
 
       &>div:nth-child(2){
+        margin-bottom: 25px;
         
         &>div:nth-child(1){
           max-width: 400px;
@@ -572,8 +579,9 @@ header{
   .section2{
 
     &>.sectionContainer{
-      h2{
-        margin-top: 1.2em;
+      
+      &>div:nth-child(1){
+        height: 20%;
       }
 
       .projectsContainer{
@@ -594,33 +602,25 @@ header{
 
     &>.sectionContainer{
 
-      h2{
-        margin-top: 1.5em;
+      &>div:nth-child(1){
+        height: 20%;
       }
     }
   }
 
   // Contact
   .section4{
-    
 
     .sectionTitle{
       font-size: 6em;
-      top: -252vh;
+      top: -262vh;
     }
 
     &>.sectionContainer{
-      
 
-      h2{
-        margin-top: 1.1em;
+      &>div:nth-child(1){
+        height: 20%;
       }
     }
   }
-}
-
-@media screen and (max-width: 690px) and (orientation: landscape) {
-  
-
-
 }

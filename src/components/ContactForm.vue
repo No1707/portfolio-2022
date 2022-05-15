@@ -53,7 +53,7 @@ export default{
 
     form{
       width: 60%;
-      margin: 0 auto;
+      margin: 50px auto 0 auto;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -133,9 +133,17 @@ export default{
         margin-top: 50px;
       }
     }
+
+    @media screen and (max-width: 1000px){
+      form{
+        margin-top: 25px;
+      }
+    }
     
     @media screen and (max-width: 690px){
       form{
+        margin-top: 0;
+
         div:nth-child(1){
           flex-direction: column;
 
@@ -146,7 +154,7 @@ export default{
         }
         div:nth-child(2){
           width: 100%;
-          margin-top: 30px;
+          margin-top: 50px;
         }
         .formInput, textarea{
           
