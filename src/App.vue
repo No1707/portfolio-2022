@@ -61,9 +61,9 @@
             <p>
               Le <span>développement front-end</span> est une discipline que j'adore. <br>
               J'aime faire naître des sites et applications de zéro, en les habillant et
-              en y implentant des <span>intégrations modernes</span> pour ensuite les rendre 
+              en y implantant des <span>intégrations modernes</span> pour ensuite les rendre 
               disponibles à tous. <br>
-              Animations, intéractions, effets UI sont les éléments que je préfère intégrés. <br><br><br>
+              Animations, intéractions, effets UI sont les éléments que je préfère intégrer. <br><br><br>
     
               Curieux, rigoureux, aime les défis, très attentif aux détails, vous pouvez compter
               sur moi pour faire mon <span>maximum</span> dans la réalisation de votre projet. <br><br><br>
