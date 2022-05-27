@@ -1,5 +1,6 @@
 <template>
     
+    <!-- header -->
     <header ref="home">
 
       <Navbar :offsetY="offsetY" @navigateMenu="navigateMenu"/>

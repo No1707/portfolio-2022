@@ -89,7 +89,7 @@ export default {
                         {link: "js.svg", active: false, name: "JavaScript"},
                         {link: "coingecko.svg", active: false, name: "CoinGecko API"}
                     ],
-                    url: 'https://github.com/No1707/Crypto-Dashboard',
+                    url: 'https://nolan-crypto-dashboard.web.app/',
                     background: require('../assets/CryptoDash.png')
                 },
                 {
