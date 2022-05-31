@@ -149,6 +149,7 @@ $white: #EEEEEE;
     }
     @media screen and (max-width: 690px){
         .skillsContainer{
+            margin-bottom: 2em;
             
             &>div{
 

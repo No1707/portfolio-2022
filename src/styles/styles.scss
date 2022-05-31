@@ -512,6 +512,9 @@ header{
   .sectionTitle{
     line-height: 30vh;
   }
+  .sectionContainer{
+    height: auto;
+  }
   header{
     
     .headerMain{
@@ -554,17 +557,18 @@ header{
       }
     }
   }
+
   // A propos
   .section1{
 
     &>.sectionContainer{
 
       &>div:nth-child(1){
-        height: 20%;
+        margin: 3em 0;
       }
 
       &>div:nth-child(2){
-        margin-bottom: 25px;
+        margin-bottom: 3em;
         
         &>div:nth-child(1){
           max-width: 400px;
@@ -581,12 +585,12 @@ header{
     &>.sectionContainer{
       
       &>div:nth-child(1){
-        height: 20%;
+        margin: 3em 0 1em 0;
       }
 
       .projectsContainer{
         padding: 0;
-        margin: 2em auto 3em auto;
+        margin: 0 auto 3em auto;
 
         .revealMultipleItem{
           width: 300px;
@@ -596,20 +600,21 @@ header{
     }
   }
 
-
   // Compétences
   .section3{
+    height: auto;
 
     &>.sectionContainer{
 
       &>div:nth-child(1){
-        height: 20%;
+        margin: 3em 0 1em 0;
       }
     }
   }
 
   // Contact
   .section4{
+    height: auto;
 
     .sectionTitle{
       font-size: 6em;
@@ -619,7 +624,12 @@ header{
     &>.sectionContainer{
 
       &>div:nth-child(1){
-        height: 20%;
+        margin: 3em 0;
+      }
+
+      .copyright{
+        position: relative;
+        margin-top: 3em;
       }
     }
   }
